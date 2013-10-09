@@ -1,152 +1,9 @@
 var APP = {};
 (function () {
+    var APPDATA = "AppData",
+        appData = store.get(APPDATA);
+
     APP.Data = {};
-    APP.Data.Tables = {
-        roles: [
-            {
-                id: 1,
-                name: "student"
-            },
-            {
-                id: 2,
-                name: "teacher"
-            }
-        ],
-        country: [
-            {
-                id: 1,
-                name: "Russia"
-            },
-            {
-                id: 2,
-                name: "Ukraine"
-            }
-        ],
-        city: [
-            {
-                id: 1,
-                countryId: 1,
-                name: "Москва"
-            },
-            {
-                id: 2,
-                countryId: 2,
-                name: "Одесса"
-            },
-            {
-                id: 3,
-                countryId: 1,
-                name: "Санкт-Петербург"
-            },
-            {
-                id: 4,
-                countryId: 2,
-                name: "Донецк"
-            }
-        ],
-        people: [
-
-        ]
-    };
-    APP.Data.rawStudentsToNormal = function (rawArr) {
-        var newStudent,
-            student,
-            i,
-            l = rawArr.length,
-            d = APP.Data;
-        for (i = 0; i < l; i++) {
-            student = rawArr[i];
-            newStudent = {};
-            newStudent.fName = student.first_name;
-            newStudent.lName = student.last_name;
-            newStudent.about = student.about;
-            newStudent.id = d.getMaxHumanId();
-            newStudent.roleId = 2;
-            newStudent.city = d.getCityId(student.city);
-            newStudent.social = {
-                vk: student.link_vk,
-                fb: student.link_facebook,
-                ya: student.link_yaru,
-                git: student.link_gihub
-            };
-            if (student.photos) {
-                newStudent.photos = student.photos
-            } else
-                newStudent.photos = {
-                    s: student.link_photo,
-                    m: student.link_photo,
-                    b: student.link_photo
-                };
-
-            d.Tables.people.push(newStudent);
-        }
-    };
-    APP.Data.getMaxHumanId = function () {
-        var maxId, people, i, l, human;
-        maxId = 0;
-        people = APP.Data.Tables.people;
-        l = people.length;
-        for (i = 0; i < l; i++) {
-            human = people[i];
-            maxId = human.id > maxId ? human.id : maxId;
-        }
-        APP.Data.getMaxHumanId = function () {
-            ++maxId;
-            return maxId;
-        };
-        return maxId;
-    };
-    APP.Data.getCityId = function (name) {
-        var cityArr = APP.Data.Tables.city,
-            i,
-            city,
-            maxId;
-        maxId = cityArr.length;
-        for (i = 0; i < maxId; i++) {
-            city = cityArr[i];
-            if (city.name == name) return city.id;
-        }
-        ++maxId;
-        cityArr.push(
-            {
-                id: maxId,
-                countryId: 1,
-                name: name
-            }
-        );
-        return maxId
-    };
-
-    APP.Data.getStudent = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            student,
-            l,
-            i;
-        l = people.length;
-        for (i = 0; i < l; i++) {
-            student = people[i];
-            if (student.id == id) {
-                student.city = data.getCity(student.city);
-                return student;
-            }
-        }
-        return false;
-    };
-
-    APP.Data.getCity = function (id) {
-        var cityArr = APP.Data.Tables.city,
-            i, l, city;
-        l = cityArr.length;
-        for (i = 0; i < l; i++) {
-            city = cityArr[i];
-            if (city.id == id) {
-                return city.name;
-            }
-        }
-        return false;
-    };
-
     APP.Data.Raw = [
         {
             "Timestamp": "9/28/2013 2:51:14",
@@ -557,7 +414,163 @@ var APP = {};
             }
         }
     ];
+    APP.Data.Tables = {
+        roles: [
+            {
+                id: 1,
+                name: "student"
+            },
+            {
+                id: 2,
+                name: "teacher"
+            }
+        ],
+        country: [
+            {
+                id: 1,
+                name: "Russia"
+            },
+            {
+                id: 2,
+                name: "Ukraine"
+            }
+        ],
+        city: [
+            {
+                id: 1,
+                countryId: 1,
+                name: "Москва"
+            },
+            {
+                id: 2,
+                countryId: 2,
+                name: "Одесса"
+            },
+            {
+                id: 3,
+                countryId: 1,
+                name: "Санкт-Петербург"
+            },
+            {
+                id: 4,
+                countryId: 2,
+                name: "Донецк"
+            }
+        ],
+        people: [
 
+        ]
+    };
+    APP.Data.rawStudentsToNormal = function (rawArr) {
+        var newStudent,
+            student,
+            i,
+            l = rawArr.length,
+            d = APP.Data;
+        for (i = 0; i < l; i++) {
+            student = rawArr[i];
+            newStudent = {};
+            newStudent.fName = student.first_name;
+            newStudent.lName = student.last_name;
+            newStudent.about = student.about;
+            newStudent.id = d.getMaxHumanId();
+            newStudent.roleId = 2;
+            newStudent.city = d.getCityId(student.city);
+            newStudent.social = {
+                vk: student.link_vk,
+                fb: student.link_facebook,
+                ya: student.link_yaru,
+                git: student.link_gihub
+            };
+            if (student.photos) {
+                newStudent.photos = student.photos
+            } else
+                newStudent.photos = {
+                    s: student.link_photo,
+                    m: student.link_photo,
+                    b: student.link_photo
+                };
+
+            d.Tables.people.push(newStudent);
+        }
+    };
+    APP.Data.getMaxHumanId = function () {
+        var maxId, people, i, l, human;
+        maxId = 0;
+        people = APP.Data.Tables.people;
+        l = people.length;
+        for (i = 0; i < l; i++) {
+            human = people[i];
+            maxId = human.id > maxId ? human.id : maxId;
+        }
+        APP.Data.getMaxHumanId = function () {
+            ++maxId;
+            return maxId;
+        };
+        return maxId;
+    };
+    APP.Data.getCityId = function (name) {
+        var cityArr = APP.Data.Tables.city,
+            i,
+            city,
+            maxId;
+        maxId = cityArr.length;
+        for (i = 0; i < maxId; i++) {
+            city = cityArr[i];
+            if (city.name == name) return city.id;
+        }
+        ++maxId;
+        cityArr.push(
+            {
+                id: maxId,
+                countryId: 1,
+                name: name
+            }
+        );
+        return maxId
+    };
+    APP.Data.getStudent = function (id) {
+        var data = APP.Data,
+            people = data.Tables.people,
+            student,
+            l,
+            i;
+        l = people.length;
+        for (i = 0; i < l; i++) {
+            student = people[i];
+            if (student.id == id) {
+                student.city = data.getCity(student.city);
+                return student;
+            }
+        }
+        return false;
+    };
+    APP.Data.getCity = function (id) {
+        var cityArr = APP.Data.Tables.city,
+            i, l, city;
+        l = cityArr.length;
+        for (i = 0; i < l; i++) {
+            city = cityArr[i];
+            if (city.id == id) {
+                return city.name;
+            }
+        }
+        return false;
+    };
+    APP.Data.setStorage = function () {
+        store.set(APPDATA, APP.Data.Tables);
+    };
+    APP.Data.getStorage = function () {
+        APP.Data.Tables = store.set(APPDATA);
+    };
 
     APP.Data.rawStudentsToNormal(APP.Data.Raw);
+        if (appData) {
+            APP.Data.getStorage();
+        } else {
+            APP.Data.setStorage();
+        }
+
+
+
 })();
