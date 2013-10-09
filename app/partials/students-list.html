@@ -1,5 +1,5 @@
-<div>
-    <input ng-model="searchQuery">
+<div class="people-search-wrapper">
+    <input ng-model="searchQuery" class="people-search-input">
 </div>
 <div class="people-container">
     <div class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">

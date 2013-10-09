@@ -5,6 +5,14 @@
     position: absolute;
 }
 
+.people-search-wrapper{
+    background: #facc28;
+}
+
+.people-search-input{
+    margin: 10px;
+    width: 90%;
+}
 .people-card {
     display: inline-block;
     width: 200px;
