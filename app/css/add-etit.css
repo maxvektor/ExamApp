@@ -1,0 +1,22 @@
+.control-form{
+    padding: 20px 0px;
+}
+
+.control-form-part{
+    margin: 5px 0px;
+    background: rgba(100,100,100,.8);
+}
+
+.control-group {
+    padding: 5px;
+}
+.control-group input,.control-group textarea {
+    width: 400px;
+}
+
+.control-group-label{
+    width: 120px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}

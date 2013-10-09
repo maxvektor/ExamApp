@@ -539,7 +539,6 @@ var APP = {};
         for (i = 0; i < l; i++) {
             student = people[i];
             if (student.id == id) {
-                student.city = data.getCity(student.city);
                 return student;
             }
         }
@@ -580,13 +579,22 @@ var APP = {};
         for (i = 0; i < l; i++) {
             student = people[i];
             if (student.id == id) {
-                student.city = data.getCity(student.city);
                 return i;
             }
         }
         return -1;
     };
-
+    APP.Data.updateHumanById = function (id, updatedHuman) {
+        var attribute, data, people, index, human;
+        data = APP.Data;
+        people = data.Tables.people;
+        index = data.getHumanIndexById(id);
+        human = people[index];
+        for (attribute in updatedHuman) {
+            human.attribute = updatedHuman.attribute;
+        }
+        data.setStorage();
+    };
     APP.Data.rawStudentsToNormal(APP.Data.Raw);
     if (appData) {
         APP.Data.getStorage();

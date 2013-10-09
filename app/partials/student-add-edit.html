@@ -1,0 +1,59 @@
+<form class="control-form" id="student-form" ng-submit="submit()">
+    <div class="control-form-part">
+        <h3 class="main-h3">О студенте:</h3>
+        <div class="control-group">
+            <label class="control-group-label" for="lName">Фамилия:</label>
+            <input id="lName" ng-model="human.lName">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="fName">Имя:</label>
+            <input id="fName" ng-model="human.fName">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="about">О Себе:</label>
+            <textarea id="about">{{ human.about }}</textarea>
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="city">Город:</label>
+            <input id="city" ng-model="city">
+        </div>
+    </div>
+    <div class="control-form-part">
+        <h3 class="main-h3">Ссылки на фото:</h3>
+        <div class="control-group">
+            <label class="control-group-label" for="photoB">Ссылка на фото(б):</label>
+            <input id="photoB" ng-model="human.photos.b">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="photoM">Ссылка на фото(с):</label>
+            <input id="photoM" ng-model="human.photos.m">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="photoS">Ссылка на фото(м):</label>
+            <input id="photoS" ng-model="human.photos.s">
+        </div>
+    </div>
+    <div class="control-form-part">
+        <h3 class="main-h3">Сциальные сети</h3>
+        <div class="control-group">
+            <label class="control-group-label" for="ya">Ya.ru:</label>
+            <input id="ya" ng-model="human.social.ya">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="vk">VK.com:</label>
+            <input id="vk" ng-model="human.social.vk">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="git">gitHub:</label>
+            <input id="git" ng-model="human.social.git">
+        </div>
+        <div class="control-group">
+            <label class="control-group-label" for="fb">FB:</label>
+            <input id="fb" ng-model="human.social.fb">
+        </div>
+    </div>
+    <div class="control-form-part">
+        <button type="submit">Изменить</button>
+        <button type="submit">Отменить</button>
+    </div>
+</form>
