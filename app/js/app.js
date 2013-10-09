@@ -4,7 +4,7 @@ var main = angular.module('main', [], function ($routeProvider) {
     });
     $routeProvider.when('/students', {
         templateUrl: 'app/partials/students-list.html',
-        controller: PeopleListCtrl
+        controller: StudentsListCtrl
     });
     $routeProvider.when('/students/:id', {
         templateUrl: 'app/partials/student.html',

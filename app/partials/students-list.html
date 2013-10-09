@@ -1,5 +1,8 @@
+<div>
+    <input ng-model="searchQuery">
+</div>
 <div class="people-container">
-    <div class="people-card" ng-repeat="human in people">
+    <div class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
         <div class="people-card-name  f-l">
             <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
         </div>
