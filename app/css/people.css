@@ -29,25 +29,43 @@
 .people-card-img-pic {
     width: 100%;
 }
-/*
-TODO: ellipsis to fit in one row with control bar
-*/
+
 .people-card-top-name {
     font-size: 17px;
-    line-height: 31px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 130px;
+    display: inline-block;
 }
 
 .people-card-name-link {
     color: #ff6600;
 }
+.people-card-top-control{
+    display: inline-block;
+}
+
+
+.people-card-top-control-btn{
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.people-card-top-control-collapse {
+    background: url("../img/des/card_collapse.png") no-repeat;
+}
+
+.people-card-top-control-edit {
+    background: url("../img/des/card_edit.png") no-repeat;
+}
 
 .people-card-top-control-close {
-    cursor: pointer;
+    background: url("../img/des/card_close.png") no-repeat;
 }
-/*
-TODO: ADD design for delete panel
-*/
 
 .people-card-about {
     width: 100%;
