@@ -3,9 +3,16 @@
     -webkit-column-width: 210px;
     column-width: 210px;
     position: absolute;
-    margin-top: 100px;
 }
 
+.people-search-wrapper{
+    background: #facc28;
+}
+
+.people-search-input{
+    margin: 10px;
+    width: 90%;
+}
 .people-card {
     display: inline-block;
     width: 200px;
