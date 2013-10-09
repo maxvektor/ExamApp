@@ -2,7 +2,7 @@
     <input id="search" ng-model="searchQuery" class="people-search-input"><label for="search">?</label>
 </div>
 <div class="people-container">
-    <div class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
+    <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
 
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">

@@ -20,6 +20,16 @@
     padding: 10px 10px;
     margin: 5px;
     background: rgba(138, 96, 96, 1);
+    transition: all 1s;
+    -moz-transition: all 1s; /* Firefox 4 */
+    -webkit-transition: all 1s; /* Safari and Chrome */
+    -o-transition: all 1s; /* Opera */
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.people-card-collapsed {
+    max-height: 15px;
 }
 
 .people-card-img {
@@ -28,6 +38,10 @@
 
 .people-card-img-pic {
     width: 100%;
+}
+
+.people-card-top {
+    padding-bottom: 5px;
 }
 
 .people-card-top-name {
@@ -43,12 +57,12 @@
 .people-card-name-link {
     color: #ff6600;
 }
-.people-card-top-control{
+
+.people-card-top-control {
     display: inline-block;
 }
 
-
-.people-card-top-control-btn{
+.people-card-top-control-btn {
     cursor: pointer;
     width: 18px;
     height: 18px;
