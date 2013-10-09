@@ -559,18 +559,42 @@ var APP = {};
     };
     APP.Data.setStorage = function () {
         store.set(APPDATA, APP.Data.Tables);
+        console.log(APP.Data.Tables.people.length);
     };
     APP.Data.getStorage = function () {
-        APP.Data.Tables = store.set(APPDATA);
+        APP.Data.Tables = store.get(APPDATA);
+        console.log(APP.Data.Tables.people.length);
+    };
+    APP.Data.removeHuman = function (id) {
+        var data = APP.Data,
+            people = data.Tables.people,
+            index = data.getHumanIndexById(id);
+        people.splice(index, 1);
+        data.setStorage();
+    };
+    APP.Data.getHumanIndexById = function (id) {
+        var data = APP.Data,
+            people = data.Tables.people,
+            student,
+            l,
+            i;
+        l = people.length;
+        for (i = 0; i < l; i++) {
+            student = people[i];
+            if (student.id == id) {
+                student.city = data.getCity(student.city);
+                return i;
+            }
+        }
+        return -1;
     };
 
     APP.Data.rawStudentsToNormal(APP.Data.Raw);
-        if (appData) {
-            APP.Data.getStorage();
-        } else {
-            APP.Data.setStorage();
-        }
-
+    if (appData) {
+        APP.Data.getStorage();
+    } else {
+        APP.Data.setStorage();
+    }
 
 
 })();

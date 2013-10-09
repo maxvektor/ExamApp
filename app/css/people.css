@@ -5,14 +5,15 @@
     position: absolute;
 }
 
-.people-search-wrapper{
+.people-search-wrapper {
     background: #facc28;
 }
 
-.people-search-input{
+.people-search-input {
     margin: 10px;
     width: 90%;
 }
+
 .people-card {
     display: inline-block;
     width: 200px;
@@ -28,24 +29,35 @@
 .people-card-img-pic {
     width: 100%;
 }
-
-.people-card-name {
+/*
+TODO: ellipsis to fit in one row with control bar
+*/
+.people-card-top-name {
     font-size: 17px;
     line-height: 31px;
     font-weight: bold;
 }
-.people-card-name-link{
+
+.people-card-name-link {
     color: #ff6600;
 }
+
+.people-card-top-control-close {
+    cursor: pointer;
+}
+/*
+TODO: ADD design for delete panel
+*/
+
 .people-card-about {
     width: 100%;
     max-height: 125px;
     font-style: italic;
     overflow: hidden;
-    position:relative;
+    position: relative;
 }
 
-.people-card-about:after{
+.people-card-about:after {
     content: "";
     position: absolute;
     bottom: -20px;
@@ -80,10 +92,11 @@
 }
 
 .human-blockquote:after {
-    content:'';
-    display:block;
+    content: '';
+    display: block;
     clear: both;
 }
+
 .human-photo {
     margin-right: 10px;
     float: left;
@@ -93,7 +106,7 @@
     display: inline;
 }
 
-.human-sotial{
+.human-sotial {
     width: 50px;
     height: 50px;
     display: inline-block;
