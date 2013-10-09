@@ -1,0 +1,14 @@
+<div class="people-container">
+    <div class="people-card" ng-repeat="human in people">
+        <div class="people-card-name  f-l">
+            <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+        </div>
+        <div class="people-card-img">
+            <img class="people-card-img-pic" src="{{ human.photos.b }}">
+        </div>
+        <div class="people-card-about">
+            {{ human.about }}
+        </div>
+
+    </div>
+</div>

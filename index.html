@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ШРИ 2013 (Москва)</title>
+    <link rel="stylesheet" type="text/css" href="app/css/main.css">
+    <link rel="stylesheet" type="text/css" href="app/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="app/css/helper.css">
+    <link rel="stylesheet" type="text/css" href="app/css/people.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="content-wrapper">
+        <div class="main-menu">
+            <div class="main-menu-logo f-l">
+                <a class="main-menu-link" href="#/">ШРИ</a>
+            </div>
+            <div class="main-menu-wrapper" ng-controller="HeaderCtrl">
+                <div class="main-menu-item">
+                    <a class="{{ getClass('/home') }} main-link" href="#/home">/</a>
+                </div>
+                <div class="main-menu-item">
+                    <a class="{{ getClass('/students') }} main-link" href="#/students">Студенты</a>
+                </div>
+            </div>
+        </div>
+        <div ng-view></div>
+    </div>
+</div>
+
+
+<script src="app/lib/angular.min.js"></script>
+<script src="app/data/storage.js" charset='utf-8'></script>
+<script src="app/js/app.js"></script>
+<script src="app/js/controller/HeaderCtrl.js"></script>
+<script src="app/js/controller/PeopleListCtr.js"></script>
+<script src="app/js/controller/StudentCtrl.js"></script>
+</body>
+</html>

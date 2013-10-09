@@ -1,0 +1,94 @@
+.people-container {
+    -moz-column-width: 210px;
+    -webkit-column-width: 210px;
+    column-width: 210px;
+    position: absolute;
+    margin-top: 100px;
+}
+
+.people-card {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 10px;
+    margin: 5px;
+    background: rgba(138, 96, 96, 1);
+}
+
+.people-card-img {
+    width: 200px;
+}
+
+.people-card-img-pic {
+    width: 100%;
+}
+
+.people-card-name {
+    font-size: 17px;
+    line-height: 31px;
+    font-weight: bold;
+}
+.people-card-name-link{
+    color: #ff6600;
+}
+.people-card-about {
+    width: 100%;
+    max-height: 125px;
+    font-style: italic;
+    overflow: hidden;
+    position:relative;
+}
+
+.people-card-about:after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 30px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: -30px 30px 35px 55px rgba(138, 96, 96, 1);
+}
+
+.human-name-header {
+    color: #FF6600;
+    padding: 20px;
+    font-size: 45px;
+}
+
+.human-blockquote {
+    background: rgba(150, 150, 150, .8);
+    border-left: 10px solid #FF6600;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.human-blockquote:before {
+    color: #ff6600;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+.human-blockquote:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+.human-photo {
+    margin-right: 10px;
+    float: left;
+}
+
+.human-blockquote p {
+    display: inline;
+}
+
+.human-sotial{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 2px;
+}
