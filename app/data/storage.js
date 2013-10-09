@@ -559,11 +559,9 @@ var APP = {};
     };
     APP.Data.setStorage = function () {
         store.set(APPDATA, APP.Data.Tables);
-        console.log(APP.Data.Tables.people.length);
     };
     APP.Data.getStorage = function () {
         APP.Data.Tables = store.get(APPDATA);
-        console.log(APP.Data.Tables.people.length);
     };
     APP.Data.removeHuman = function (id) {
         var data = APP.Data,

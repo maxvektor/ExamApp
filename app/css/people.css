@@ -20,6 +20,16 @@
     padding: 10px 10px;
     margin: 5px;
     background: rgba(138, 96, 96, 1);
+    transition: all 1s;
+    -moz-transition: all 1s; /* Firefox 4 */
+    -webkit-transition: all 1s; /* Safari and Chrome */
+    -o-transition: all 1s; /* Opera */
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.people-card-collapsed {
+    max-height: 15px;
 }
 
 .people-card-img {
@@ -29,25 +39,47 @@
 .people-card-img-pic {
     width: 100%;
 }
-/*
-TODO: ellipsis to fit in one row with control bar
-*/
+
+.people-card-top {
+    padding-bottom: 5px;
+}
+
 .people-card-top-name {
     font-size: 17px;
-    line-height: 31px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 130px;
+    display: inline-block;
 }
 
 .people-card-name-link {
     color: #ff6600;
 }
 
-.people-card-top-control-close {
-    cursor: pointer;
+.people-card-top-control {
+    display: inline-block;
 }
-/*
-TODO: ADD design for delete panel
-*/
+
+.people-card-top-control-btn {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.people-card-top-control-collapse {
+    background: url("../img/des/card_collapse.png") no-repeat;
+}
+
+.people-card-top-control-edit {
+    background: url("../img/des/card_edit.png") no-repeat;
+}
+
+.people-card-top-control-close {
+    background: url("../img/des/card_close.png") no-repeat;
+}
 
 .people-card-about {
     width: 100%;

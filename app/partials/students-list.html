@@ -2,13 +2,17 @@
     <input id="search" ng-model="searchQuery" class="people-search-input"><label for="search">?</label>
 </div>
 <div class="people-container">
-    <div class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
+    <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
 
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
                 <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
             </div>
-            <div class="people-card-top-control"> <span ng-click="remove($index)" class="people-card-top-control-close">X</span></div>
+            <div class="people-card-top-control">
+                <span ng-click="collapse($index)" class="people-card-top-control-btn people-card-top-control-collapse"></span>
+                <span ng-click="edit($index)" class="people-card-top-control-btn people-card-top-control-edit"></span>
+                <span ng-click="remove($index)" class="people-card-top-control-btn people-card-top-control-close"></span>
+            </div>
         </div>
         <div class="people-card-img">
             <img class="people-card-img-pic" src="{{ human.photos.b }}">
