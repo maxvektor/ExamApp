@@ -1,10 +1,14 @@
 <div class="people-search-wrapper">
-    <input ng-model="searchQuery" class="people-search-input">
+    <input id="search" ng-model="searchQuery" class="people-search-input"><label for="search">?</label>
 </div>
 <div class="people-container">
     <div class="people-card" ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
-        <div class="people-card-name  f-l">
-            <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+
+        <div class="people-card-top">
+            <div class="people-card-top-name  f-l">
+                <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+            </div>
+            <div class="people-card-top-control"> <span ng-click="remove($index)" class="people-card-top-control-close">X</span></div>
         </div>
         <div class="people-card-img">
             <img class="people-card-img-pic" src="{{ human.photos.b }}">
