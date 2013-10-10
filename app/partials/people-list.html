@@ -27,14 +27,14 @@
         </div>
     </div>
     <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card">
-        <a class="people-card-name-link" href="#/students/add">
+        <a class="people-card-name-link" href="#/{{ group }}/add">
             <div class="people-card-top">
                 <div class="people-card-top-name  f-l">
-                    Новый студент
+                  [ Добавить ]
                 </div>
             </div>
             <div class="people-card-img">
-                <img class="people-card-img-pic" src="app/img/des/dummy_student.jpg">
+                <img class="people-card-img-pic" src="app/img/des/dummy_{{ group }}.jpg">
             </div>
         </a>
     </div>

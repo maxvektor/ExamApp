@@ -1,6 +1,6 @@
 function StudentEditCtrl($scope, $routeParams,$location) {
     $scope.id = $routeParams.id;
-    $scope.human = APP.Data.getStudent($scope.id);
+    $scope.human = APP.Data.getHuman($scope.id);
     $scope.city = APP.Data.getCity($scope.human.city);
     $scope.readyText = "Сохранить";
     $scope.submit = function(){

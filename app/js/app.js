@@ -6,13 +6,15 @@ var main = angular.module('main', [], function ($routeProvider) {
         templateUrl: 'app/partials/people-list.html',
         controller: LectorListCtrl
     });
-
-    $routeProvider.when('/lectors/:id', {
-        templateUrl: 'app/partials/human.html',
-        controller: LectorCtrl
+    $routeProvider.when('/lectors/add', {
+        templateUrl: 'app/partials/lectors-add-edit.html',
+        controller: LectorAddCtrl
     });
 
-
+    $routeProvider.when('/lectors/:id', {
+        templateUrl: 'app/partials/lector.html',
+        controller: LectorCtrl
+    });
 
     $routeProvider.when('/students', {
         templateUrl: 'app/partials/people-list.html',
@@ -27,7 +29,7 @@ var main = angular.module('main', [], function ($routeProvider) {
         controller: StudentEditCtrl
     });
     $routeProvider.when('/students/:id', {
-        templateUrl: 'app/partials/human.html',
+        templateUrl: 'app/partials/student.html',
         controller: StudentCtrl
     });
 

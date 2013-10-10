@@ -634,17 +634,17 @@ var APP = {};
         );
         return maxId
     };
-    APP.Data.getStudent = function (id) {
+    APP.Data.getHuman = function (id) {
         var data = APP.Data,
             people = data.Tables.people,
-            student,
+            human,
             l,
             i;
         l = people.length;
         for (i = 0; i < l; i++) {
-            student = people[i];
-            if (student.id == id) {
-                return student;
+            human = people[i];
+            if (human.id == id) {
+                return human;
             }
         }
         return false;
@@ -708,7 +708,16 @@ var APP = {};
         newStudent.id = id;
         people.push(newStudent);
         data.setStorage();
-    };
+    };//TODO - Remove id param from add functions
+    APP.Data.addLector = function(lector,id){
+        var newLector, data, people;
+        data = APP.Data;
+        people = data.Tables.people;
+        newLector = lector;
+        newLector.id = id;
+        people.push(newLector);
+        data.setStorage();
+    }
 
 
     APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
