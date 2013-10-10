@@ -23,6 +23,9 @@
                 <div class="main-menu-item">
                     <a class="{{ getClass('/students') }} main-link" href="#/students">Студенты</a>
                 </div>
+                <div class="main-menu-item">
+                    <a class="{{ getClass('/lectors') }} main-link" href="#/lectors">Лекторы</a>
+                </div>
             </div>
         </div>
         <div ng-view></div>
@@ -38,5 +41,6 @@
 <script src="app/js/controller/StudentCtrl.js"></script>
 <script src="app/js/controller/StudentEditCtrl.js"></script>
 <script src="app/js/controller/StudentAddCtrl.js"></script>
+<script src="app/js/controller/LectorListCtrl.js"></script>
 </body>
 </html>

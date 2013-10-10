@@ -2,6 +2,10 @@ var main = angular.module('main', [], function ($routeProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'app/statics/main.html'
     });
+    $routeProvider.when('/lectors', {
+        templateUrl: 'app/partials/students-list.html',
+        controller: LectorListCtrl
+    });
     $routeProvider.when('/students', {
         templateUrl: 'app/partials/students-list.html',
         controller: StudentsListCtrl

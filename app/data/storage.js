@@ -4,7 +4,7 @@ var APP = {};
         appData = store.get(APPDATA);
 
     APP.Data = {};
-    APP.Data.Raw = [
+    APP.Data.RawStudents = [
         {
             "Timestamp": "9/28/2013 2:51:14",
             "first_name": "Никита",
@@ -414,6 +414,92 @@ var APP = {};
             }
         }
     ];
+    APP.Data.RawLectors = [
+        {
+            "fName": "Алексей ",
+            "lName": "Бережной",
+            "about": "До Яндекса занимался разработкой браузерной MMORPG. С 2011 года работает над интерфейсом Яндекс.Директа.",
+            "photosNumber": "01"
+        },
+        {
+            "fName": "Анна",
+            "lName": "Чеботкевич",
+            "about": "",
+            "photosNumber": "02"
+        },
+        {
+            "fName": "Виктор",
+            "lName": "Ашик",
+            "about": "",
+            "photosNumber": "03"
+        },
+        {
+            "fName": "Георгий ",
+            "lName": "Мостоловица",
+            "about": "Веб-разработчик. В Яндексе занимается ускорением фронтенда Поиска.",
+            "photosNumber":"04"
+        },
+        {
+            "fName": "Денис",
+            "lName": "Бугарчев",
+            "about": "Верстальщик, разработчик веб-интерфейсов, автор подкаста о веб-разработке «Сделайте мне красиво!».",
+            "photosNumber": "05"
+        },
+        {
+            "fName": "Дмитрий ",
+            "lName": "Поляков",
+            "about": "",
+            "photosNumber": "06"
+        },
+        {
+            "fName": "Евгений ",
+            "lName": "Дорошенко",
+            "about": "",
+            "photosNumber": "07"
+        },
+        {
+            "fName": "Игорь ",
+            "lName": "Новак",
+            "about": "",
+            "photosNumber":"08"
+        },
+        {
+            "fName": "Марина ",
+            "lName": "Широчкина",
+            "about": "",
+            "photosNumber": "09"
+        },
+        {
+            "fName": "Михаил",
+            "lName": "Трошев",
+            "about": "",
+            "photosNumber": "10"
+        },
+        {
+            "fName": "Роман ",
+            "lName": "Андриади",
+            "about": "Работает в департаменте эксплуатации Яндекса с 2005 года. С 2010 года —руководитель группы администрирования коммуникационных, контент- и внутренних сервисов.",
+            "photosNumber": "11"
+        },
+        {
+            "fName": "Сергей ",
+            "lName": "Сергеев",
+            "about": "Профессионально занимается разработкой уже более 10 лет, из них 5 в Яндексе.",
+            "photosNumber": "12"
+        },
+        {
+            "fName": "Сергей ",
+            "lName": "Черкасов",
+            "about": "",
+            "photosNumber": "13"
+        },
+        {
+            "fName": "Тарас",
+            "lName": "Иващенко",
+            "about": "Администратор информационной безопасности в Яндексе. Специалист по информационной безопасности, проповедник свободного программного обеспечения, участник проектов w3af и OWASP.",
+            "photosNumber": "14"
+        }
+    ];
     APP.Data.Tables = {
         roles: [
             {
@@ -461,13 +547,13 @@ var APP = {};
 
         ]
     };
-    APP.Data.rawStudentsToNormal = function (rawArr) {
+    APP.Data.rawStudentsToPeopleArray = function (rawArr) {
         var newStudent,
             student,
             i,
             l = rawArr.length,
             d = APP.Data;
-        for (i = 0; i < l; i++) {
+        for (i = 0; i < l; i++) {//TODO: remove this ugly shit with some normal code
             student = rawArr[i];
             newStudent = {};
             newStudent.fName = student.first_name;
@@ -492,6 +578,25 @@ var APP = {};
                 };
 
             d.Tables.people.push(newStudent);
+        }
+    };
+    APP.Data.rawLectorsToPeopleArray = function (rawArr) {
+        var PATHTOPHOTO = "app/img/lectors/",
+            newLector,
+            i,
+            l = rawArr.length,
+            d = APP.Data;
+        for (i = 0; i < l; i++) {
+            lector = rawArr[i];
+            newLector = lector;
+            newLector.id = d.getMaxHumanId();
+            newLector.roleId = 1;
+            newLector.photos = {
+                s: PATHTOPHOTO + "s/" + lector.photosNumber + ".jpg",
+                m: PATHTOPHOTO + "m/" + lector.photosNumber + ".jpg",
+                b: PATHTOPHOTO + "b/" + lector.photosNumber + ".jpg"
+            };
+            d.Tables.people.push(newLector);
         }
     };
     APP.Data.getMaxHumanId = function () {
@@ -595,9 +700,8 @@ var APP = {};
         }
         data.setStorage();
     };
-
-    APP.Data.addStudent = function(student,id){
-        var newStudent,data, people;
+    APP.Data.addStudent = function (student, id) {
+        var newStudent, data, people;
         data = APP.Data;
         people = data.Tables.people;
         newStudent = student;
@@ -607,7 +711,9 @@ var APP = {};
     };
 
 
-    APP.Data.rawStudentsToNormal(APP.Data.Raw);
+    APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
+    APP.Data.rawLectorsToPeopleArray(APP.Data.RawLectors);
+
     if (appData) {
         APP.Data.getStorage();
     } else {
