@@ -10,7 +10,7 @@
                 <a class="people-card-name-link" href="#/{{ group }}/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
             </div>
             <div class="people-card-top-control">
-                <span ng-click="collapse($index)"
+                <span ng-click="collapse(human.id)"
                       class="people-card-top-control-btn people-card-top-control-collapse"></span>
                 <a href="#/{{ group }}/{{ human.id }}/edit">
                     <span class="people-card-top-control-btn people-card-top-control-edit"></span>

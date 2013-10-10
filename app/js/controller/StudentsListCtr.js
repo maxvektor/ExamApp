@@ -7,8 +7,9 @@ function StudentsListCtrl($scope) {
         APP.Data.removeHuman(id);
     };
 
-    $scope.collapse = function(index){
-        var human = $scope.people[index];
+    $scope.collapse = function (id) {
+        var index = APP.Data.getHumanIndexById(id),
+            human = $scope.people[index];
         human.isCollapsed = human.isCollapsed ? false : true;
     };
 }
