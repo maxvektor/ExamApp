@@ -6,6 +6,10 @@ var main = angular.module('main', [], function ($routeProvider) {
         templateUrl: 'app/partials/students-list.html',
         controller: StudentsListCtrl
     });
+    $routeProvider.when('/students/add', {
+        templateUrl: 'app/partials/student-add-edit.html',
+        controller: StudentAddCtrl
+    });
     $routeProvider.when('/students/:id/edit', {
         templateUrl: 'app/partials/student-add-edit.html',
         controller: StudentEditCtrl

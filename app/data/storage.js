@@ -595,6 +595,18 @@ var APP = {};
         }
         data.setStorage();
     };
+
+    APP.Data.addStudent = function(student,id){
+        var newStudent,data, people;
+        data = APP.Data;
+        people = data.Tables.people;
+        newStudent = student;
+        newStudent.id = id;
+        people.push(newStudent);
+        data.setStorage();
+    };
+
+
     APP.Data.rawStudentsToNormal(APP.Data.Raw);
     if (appData) {
         APP.Data.getStorage();

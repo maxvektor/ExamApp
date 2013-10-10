@@ -11,7 +11,7 @@
         </div>
         <div class="control-group">
             <label class="control-group-label" for="about">О Себе:</label>
-            <textarea id="about">{{ human.about }}</textarea>
+            <textarea id="about" ng-model="human.about"></textarea>
         </div>
         <div class="control-group">
             <label class="control-group-label" for="city">Город:</label>
@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="control-form-part">
-        <button type="submit">Изменить</button>
-        <button type="submit">Отменить</button>
+        <button type="submit">{{ readyText }}</button>
+        <button ng-click="reset()">Отменить</button>
     </div>
 </form>

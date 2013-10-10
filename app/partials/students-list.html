@@ -2,9 +2,9 @@
     <input id="search" ng-model="searchQuery" class="people-search-input"><label for="search">?</label>
 </div>
 <div class="people-container">
+
     <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card"
          ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
-
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
                 <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
@@ -25,6 +25,17 @@
         <div class="people-card-about">
             {{ human.about }}
         </div>
-
+    </div>
+    <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card">
+        <a class="people-card-name-link" href="#/students/add">
+            <div class="people-card-top">
+                <div class="people-card-top-name  f-l">
+                    Новый студент
+                </div>
+            </div>
+            <div class="people-card-img">
+                <img class="people-card-img-pic" src="app/img/des/dummy_student.jpg">
+            </div>
+        </a>
     </div>
 </div>
