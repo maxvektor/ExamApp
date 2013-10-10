@@ -38,6 +38,9 @@ var main = angular.module('main', [], function ($routeProvider) {
         controller: StudentCtrl
     });
 
-
+    $routeProvider.when('/lectures', {
+        templateUrl: 'app/partials/lectures-list.html',
+        controller: LecturesListCtrl
+    });
     $routeProvider.otherwise({redirectTo: '/home'});
 });
