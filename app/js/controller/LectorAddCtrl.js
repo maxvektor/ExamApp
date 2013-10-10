@@ -1,8 +1,8 @@
-function LectorAddCtrl($scope, $location) {
+function LectorAddCtrl($scope, $location) { //TODO: Think about how to join similar controllers
     $scope.human = {};
     $scope.human.social = {};
     $scope.human.photos = {};
-    $scope.human.roleId = 2;
+    $scope.human.roleId = 1;
     $scope.readyText = "Добавить";
 
     $scope.submit = function () {

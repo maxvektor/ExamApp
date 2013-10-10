@@ -11,6 +11,11 @@ var main = angular.module('main', [], function ($routeProvider) {
         controller: LectorAddCtrl
     });
 
+    $routeProvider.when('/lectors/:id/edit', {
+        templateUrl: 'app/partials/lectors-add-edit.html',
+        controller: LectorEditCtrl
+    });
+
     $routeProvider.when('/lectors/:id', {
         templateUrl: 'app/partials/lector.html',
         controller: LectorCtrl
