@@ -3,11 +3,19 @@ var main = angular.module('main', [], function ($routeProvider) {
         templateUrl: 'app/statics/main.html'
     });
     $routeProvider.when('/lectors', {
-        templateUrl: 'app/partials/students-list.html',
+        templateUrl: 'app/partials/people-list.html',
         controller: LectorListCtrl
     });
+
+    $routeProvider.when('/lectors/:id', {
+        templateUrl: 'app/partials/human.html',
+        controller: LectorCtrl
+    });
+
+
+
     $routeProvider.when('/students', {
-        templateUrl: 'app/partials/students-list.html',
+        templateUrl: 'app/partials/people-list.html',
         controller: StudentsListCtrl
     });
     $routeProvider.when('/students/add', {
@@ -19,7 +27,7 @@ var main = angular.module('main', [], function ($routeProvider) {
         controller: StudentEditCtrl
     });
     $routeProvider.when('/students/:id', {
-        templateUrl: 'app/partials/student.html',
+        templateUrl: 'app/partials/human.html',
         controller: StudentCtrl
     });
 

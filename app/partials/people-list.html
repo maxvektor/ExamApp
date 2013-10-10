@@ -7,15 +7,15 @@
          ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
-                <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+                <a class="people-card-name-link" href="#/{{ group }}/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
             </div>
             <div class="people-card-top-control">
                 <span ng-click="collapse($index)"
                       class="people-card-top-control-btn people-card-top-control-collapse"></span>
-                <a href="#/students/{{ human.id }}/edit">
+                <a href="#/{{ group }}/{{ human.id }}/edit">
                     <span class="people-card-top-control-btn people-card-top-control-edit"></span>
                 </a>
-                <span ng-click="remove($index)"
+                <span ng-click="remove( human.id )"
                       class="people-card-top-control-btn people-card-top-control-close"></span>
             </div>
         </div>

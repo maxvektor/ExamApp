@@ -1,9 +1,9 @@
 function LectorListCtrl($scope) {
     $scope.people = APP.Data.Tables.people;
     $scope.cureId = "1";
+    $scope.group = "lectors";
 
-    $scope.remove = function (index) {
-        var id = $scope.people[index].id;
+    $scope.remove = function (id) {
         APP.Data.removeHuman(id);
     };
 

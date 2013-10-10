@@ -1,9 +1,9 @@
 function StudentsListCtrl($scope) {
     $scope.people = APP.Data.Tables.people;
     $scope.cureId = "2";
+    $scope.group = "students";
 
-    $scope.remove = function (index) {
-        var id = $scope.people[index].id;
+    $scope.remove = function (id) {
         APP.Data.removeHuman(id);
     };
 
