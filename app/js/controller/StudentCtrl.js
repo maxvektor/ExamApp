@@ -1,6 +1,6 @@
 function StudentCtrl($scope, $routeParams) {
     $scope.id = $routeParams.id;
-    $scope.human = APP.Data.getStudent($scope.id);
+    $scope.human = APP.Data.getHuman($scope.id);
     $scope.city = $scope.human.city;
     $scope.fb = $scope.human.social.fb;
     $scope.vk= $scope.human.social.vk;

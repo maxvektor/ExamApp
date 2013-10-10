@@ -7,15 +7,15 @@
          ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
-                <a class="people-card-name-link" href="#/students/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+                <a class="people-card-name-link" href="#/{{ group }}/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
             </div>
             <div class="people-card-top-control">
-                <span ng-click="collapse($index)"
+                <span ng-click="collapse(human.id)"
                       class="people-card-top-control-btn people-card-top-control-collapse"></span>
-                <a href="#/students/{{ human.id }}/edit">
+                <a href="#/{{ group }}/{{ human.id }}/edit">
                     <span class="people-card-top-control-btn people-card-top-control-edit"></span>
                 </a>
-                <span ng-click="remove($index)"
+                <span ng-click="remove( human.id )"
                       class="people-card-top-control-btn people-card-top-control-close"></span>
             </div>
         </div>
@@ -27,14 +27,14 @@
         </div>
     </div>
     <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card">
-        <a class="people-card-name-link" href="#/students/add">
+        <a class="people-card-name-link" href="#/{{ group }}/add">
             <div class="people-card-top">
                 <div class="people-card-top-name  f-l">
-                    Новый студент
+                  [ Добавить ]
                 </div>
             </div>
             <div class="people-card-img">
-                <img class="people-card-img-pic" src="app/img/des/dummy_student.jpg">
+                <img class="people-card-img-pic" src="app/img/des/dummy_{{ group }}.jpg">
             </div>
         </a>
     </div>

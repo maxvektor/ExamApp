@@ -2,8 +2,27 @@ var main = angular.module('main', [], function ($routeProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'app/statics/main.html'
     });
+    $routeProvider.when('/lectors', {
+        templateUrl: 'app/partials/people-list.html',
+        controller: LectorListCtrl
+    });
+    $routeProvider.when('/lectors/add', {
+        templateUrl: 'app/partials/lectors-add-edit.html',
+        controller: LectorAddCtrl
+    });
+
+    $routeProvider.when('/lectors/:id/edit', {
+        templateUrl: 'app/partials/lectors-add-edit.html',
+        controller: LectorEditCtrl
+    });
+
+    $routeProvider.when('/lectors/:id', {
+        templateUrl: 'app/partials/lector.html',
+        controller: LectorCtrl
+    });
+
     $routeProvider.when('/students', {
-        templateUrl: 'app/partials/students-list.html',
+        templateUrl: 'app/partials/people-list.html',
         controller: StudentsListCtrl
     });
     $routeProvider.when('/students/add', {
