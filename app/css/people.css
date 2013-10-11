@@ -50,7 +50,6 @@
 
 .people-card-top-name {
     font-size: 17px;
-    font-weight: bold;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -59,7 +58,7 @@
 }
 
 .people-card-name-link {
-    color: #ff6600;
+    color: #facc28;
 }
 
 .people-card-top-control {
@@ -105,21 +104,21 @@
 }
 
 .human-name-header {
-    color: #FF6600;
+    color: #facc28;
     padding: 20px;
     font-size: 45px;
 }
 
 .human-blockquote {
     background: rgba(150, 150, 150, .8);
-    border-left: 10px solid #FF6600;
+    border-left: 10px solid #facc28;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 .human-blockquote:before {
-    color: #ff6600;
+    color: #facc28;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
