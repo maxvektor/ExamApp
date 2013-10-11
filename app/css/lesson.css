@@ -42,3 +42,21 @@
     color: #ff6600;
     text-decoration: none;
 }
+
+.lesson-name-header {
+    color: #FF6600;
+    padding: 20px;
+    font-size: 45px;
+}
+.lesson-media-holder{
+    margin:0 auto;
+    width: 750px;
+}
+
+.lesson-video{
+    padding: 10px;
+}
+
+.lesson-slide{
+    padding: 10px;
+}
