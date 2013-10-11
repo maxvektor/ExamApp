@@ -1,0 +1,78 @@
+.lesson-block {
+    background: rgba(138, 96, 96, .8);
+    font-size: 17px;
+    line-height: 30px;
+    vertical-align: top;
+    display: inline-block;
+    width: 48%;
+    margin: 1%;
+}
+
+.lesson-name {
+    font-size: 25px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.lesson-lector {
+    text-align: right;
+    padding: 5px;
+}
+
+.lesson-has {
+    vertical-align:top;
+    display: inline-block;
+}
+
+.lesson-has-video {
+    display: inline-block;
+    background: url("../img/des/has-video.png");
+    width: 18px;
+    height: 18px;
+}
+
+.lesson-has-slide {
+    display: inline-block;
+    background: url("../img/des/has-slide.png");
+    width: 18px;
+    height: 18px;
+}
+
+.lesson-link {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.lesson-name-header {
+    color: #FF6600;
+    padding: 20px;
+    font-size: 45px;
+}
+.lesson-media-holder{
+    margin: 0 auto;
+    width: 750px;
+    display: inline-block;
+}
+
+.lesson-video{
+    padding: 10px;
+}
+
+.lesson-slide{
+    padding: 10px;
+}
+
+.lesson-person {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 20px;
+}
+
+.lesson-person-name {
+    font-size: 32px;
+}
+
+.lesson-person-img {
+
+}

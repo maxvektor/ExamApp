@@ -416,90 +416,227 @@ var APP = {};
     ];
     APP.Data.RawLectors = [
         {
+            "id": "134",
             "fName": "Алексей ",
             "lName": "Бережной",
             "about": "До Яндекса занимался разработкой браузерной MMORPG. С 2011 года работает над интерфейсом Яндекс.Директа.",
             "photosNumber": "01"
         },
         {
+            "id": "125",
             "fName": "Анна",
             "lName": "Чеботкевич",
             "about": "",
             "photosNumber": "02"
         },
         {
+            "id": "126",
             "fName": "Виктор",
             "lName": "Ашик",
             "about": "",
             "photosNumber": "03"
         },
         {
+            "id": "127",
             "fName": "Георгий ",
             "lName": "Мостоловица",
             "about": "Веб-разработчик. В Яндексе занимается ускорением фронтенда Поиска.",
-            "photosNumber":"04"
+            "photosNumber": "04"
         },
         {
+            "id": "128",
             "fName": "Денис",
             "lName": "Бугарчев",
             "about": "Верстальщик, разработчик веб-интерфейсов, автор подкаста о веб-разработке «Сделайте мне красиво!».",
             "photosNumber": "05"
         },
         {
+            "id": "129",
             "fName": "Дмитрий ",
             "lName": "Поляков",
             "about": "",
             "photosNumber": "06"
         },
         {
+            "id": "130",
             "fName": "Евгений ",
             "lName": "Дорошенко",
             "about": "",
             "photosNumber": "07"
         },
         {
+            "id": "131",
             "fName": "Игорь ",
             "lName": "Новак",
             "about": "",
-            "photosNumber":"08"
+            "photosNumber": "08"
         },
         {
+            "id": "132",
             "fName": "Марина ",
             "lName": "Широчкина",
             "about": "",
             "photosNumber": "09"
         },
         {
+            "id": "133",
             "fName": "Михаил",
             "lName": "Трошев",
             "about": "",
             "photosNumber": "10"
         },
         {
+            "id": "134",
             "fName": "Роман ",
             "lName": "Андриади",
             "about": "Работает в департаменте эксплуатации Яндекса с 2005 года. С 2010 года —руководитель группы администрирования коммуникационных, контент- и внутренних сервисов.",
             "photosNumber": "11"
         },
         {
+            "id": "135",
             "fName": "Сергей ",
             "lName": "Сергеев",
             "about": "Профессионально занимается разработкой уже более 10 лет, из них 5 в Яндексе.",
             "photosNumber": "12"
         },
         {
+            "id": "136",
             "fName": "Сергей ",
             "lName": "Черкасов",
             "about": "",
             "photosNumber": "13"
         },
         {
+            "id": "137",
             "fName": "Тарас",
             "lName": "Иващенко",
             "about": "Администратор информационной безопасности в Яндексе. Специалист по информационной безопасности, проповедник свободного программного обеспечения, участник проектов w3af и OWASP.",
             "photosNumber": "14"
         }
     ];
+    APP.Data.RawLectures = [
+        {
+            "id": 35,
+            "lector_id": 131,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/nvby8zm0d8.3121/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263503",
+            "name": "Изучение и редактирование кода "
+        },
+        {
+            "id": 36,
+            "lector_id": 134,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/gmhj6jhjbq.7339/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497344",
+            "name": "Развертывание верстки"
+        },
+        {
+            "id": 37,
+            "lector_id": 127,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
+            "name": "http-протокол"
+        },
+        {
+            "id": 38,
+            "lector_id": 127,
+            "native_id": 1329,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": null,
+            "name": "Механизм работы браузера "
+        },
+        {
+            "id": 39,
+            "lector_id": 130,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/0tk8ubi12b.7216/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501207",
+            "name": "Кеширование на клиенте и сервере"
+        },
+        {
+            "id": 40,
+            "lector_id": 137,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/4fcm2v836x.2020/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501715",
+            "name": "Безопасность веб-приложений"
+        },
+        {
+            "id": 41,
+            "lector_id": 134,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26502148",
+            "name": "Регулярные выражения "
+        },
+        {
+            "id": 42,
+            "lector_id": 126,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/yc39l9dh0a.4723/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263542",
+            "name": "Командная строка Unix"
+        },
+        {
+            "id": 43,
+            "lector_id": 128,
+            "video_url": null,
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26503527",
+            "name": "Архитектура веб-сервисов"
+        },
+        {
+            "id": 44,
+            "lector_id": 128,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/uery0fxkg2.7247/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501860",
+            "name": "Языки программирования "
+        },
+        {
+            "id": 45,
+            "lector_id": 132,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/u7neb4ukb7.4729/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26495249",
+            "name": "Тестирование"
+        },
+        {
+            "id": 46,
+            "lector_id": 135,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/oeunffeksq.5100/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": null,
+            "name": "Cистемы контроля версий "
+        },
+        {
+            "id": 47,
+            "lector_id": 136,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/mifh2zd4xw.7143/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263370",
+            "name": "Вики-синтаксис"
+        },
+        {
+            "id": 48,
+            "lector_id": 136,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/hlgkkpcf67.3822/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": null,
+            "name": "Документирование информации"
+        },
+        {
+            "id": 49,
+            "lector_id": 133,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/u7myq83g9q.4811/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263573",
+            "name": "Общий цикл разработки (dev-cycle)"
+        },
+        {
+            "id": 50,
+            "lector_id": 125,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/r29oly6fy4.4720/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263315",
+            "name": "Вводная по ШРИ"
+        },
+        {
+            "id": 51,
+            "lector_id": 129,
+            "video_url": "http://video.yandex.ru/iframe/ya-events/vnsrv1de6g.4103/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
+            "slides_url": null,
+            "name": "История успеха выпускников ШРИ"
+        }
+    ];
+
     APP.Data.Tables = {
         roles: [
             {
@@ -589,7 +726,6 @@ var APP = {};
         for (i = 0; i < l; i++) {
             lector = rawArr[i];
             newLector = lector;
-            newLector.id = d.getMaxHumanId();
             newLector.roleId = 1;
             newLector.photos = {
                 s: PATHTOPHOTO + "s/" + lector.photosNumber + ".jpg",
@@ -598,6 +734,9 @@ var APP = {};
             };
             d.Tables.people.push(newLector);
         }
+    };
+    APP.Data.RawLecturesToTable = function (rawArr) {
+        APP.Data.Tables.lectures = rawArr;
     };
     APP.Data.getMaxHumanId = function () {
         var maxId, people, i, l, human;
@@ -709,7 +848,7 @@ var APP = {};
         people.push(newStudent);
         data.setStorage();
     };//TODO - Remove id param from add functions
-    APP.Data.addLector = function(lector,id){
+    APP.Data.addLector = function (lector, id) {
         var newLector, data, people;
         data = APP.Data;
         people = data.Tables.people;
@@ -718,10 +857,26 @@ var APP = {};
         people.push(newLector);
         data.setStorage();
     }
+    APP.Data.getLecture = function(id){
+        var data = APP.Data,
+            lectures = data.Tables.lectures,
+            lecture,
+            l,
+            i;
+        l = lectures.length;
+        for (i = 0; i < l; i++) {
+            lecture = lectures[i];
+            if (lecture.id == id) {
+                return lecture;
+            }
+        }
+        return false;
+    }
 
 
     APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
     APP.Data.rawLectorsToPeopleArray(APP.Data.RawLectors);
+    APP.Data.RawLecturesToTable(APP.Data.RawLectures);
 
     if (appData) {
         APP.Data.getStorage();

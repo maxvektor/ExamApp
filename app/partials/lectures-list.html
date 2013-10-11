@@ -1,0 +1,16 @@
+<div class="lesson-block" ng-repeat="lecture in lectures">
+    <div class="lesson-name f-l">
+        <a class="lesson-link" href="#/lectures/{{ lecture.id }}"> {{ lecture.name }}</a>
+        <div class="lesson-has">
+            <div ng-hide="!lecture.video_url" class="lesson-has-video">
+            </div>
+            <div ng-hide="!lecture.slides_url" class="lesson-has-slide">
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson-lector f-l">
+        <a class="lesson-link" href="#/lectors/{{ lecture.lector_id }}"> {{ humanName(lecture.lector_id) }}</a>
+    </div>
+
+</div>
