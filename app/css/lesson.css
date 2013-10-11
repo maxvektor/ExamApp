@@ -1,5 +1,5 @@
 .lesson-block {
-    background: rgba(138, 96, 96, .8);
+    background: rgba(180, 180, 180, 0.5);
     font-size: 17px;
     line-height: 30px;
     vertical-align: top;
@@ -39,12 +39,12 @@
 }
 
 .lesson-link {
-    color: #ff6600;
+    color: #facc28;
     text-decoration: none;
 }
 
 .lesson-name-header {
-    color: #FF6600;
+    color: #facc28;
     padding: 20px;
     font-size: 45px;
 }
