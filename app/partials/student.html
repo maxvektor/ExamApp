@@ -8,22 +8,22 @@
         {{ human.about }}
     </p>
 </div>
-<div class="human-sotial" ng-hide="fb ==''">
+<div class="human-sotial" ng-hide="!fb">
     <a href="{{fb}}" target="_blank">
         <img src="app/img/des/fb.png">
     </a>
 </div>
-<div class="human-sotial" ng-hide="git ==''">
+<div class="human-sotial" ng-hide="!git">
     <a href="{{ git }}" target="_blank">
         <img src="app/img/des/git.png">
     </a>
 </div>
-<div class="human-sotial" ng-hide="ya ==''">
+<div class="human-sotial" ng-hide="!ya">
     <a href="{{ ya }}" target="_blank">
         <img src="app/img/des/ya.png">
     </a>
 </div>
-<div class="human-sotial" ng-hide="vk ==''">
+<div class="human-sotial" ng-hide="!vk">
     <a href="{{ vk }}" target="_blank">
         <img src="app/img/des/vk.png">
     </a>
