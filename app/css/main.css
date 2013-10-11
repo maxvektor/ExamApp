@@ -1,28 +1,23 @@
 .main-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
     right: 0;
-    background-image: url("../img/wallpaper/wall2.jpg");
-    background-size: 100% 100%;
+    background-image: url("../img/wallpaper/wall1.jpg");
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-color: #000945;
 }
 
 .content-wrapper {
-    position: absolute;
-    top: 5%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
-    background: rgba(100, 100, 100, 0.9);
+    background: rgba(100, 100, 100, .5);
     padding: 15px;
     overflow: auto;
     min-width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .main-menu {
-    width: 100%;
+    margin: 0 auto;
+    padding: 50px 2%;
 }
 
 .main-menu:after {
@@ -38,12 +33,11 @@
     background: url("../img/des/logo_holder.png") no-repeat;
     line-height: 100px;
     padding: 0 10px;
-    float: left;
+    display: inline-block;
 }
 
 .main-menu-wrapper {
-    float: left;
-    padding-top: 30px;
+    display: inline-block;
 }
 
 .main-menu-item {
@@ -54,6 +48,7 @@
     padding: 0 10px;
     min-width: 40px;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .main-menu-link {
@@ -63,7 +58,6 @@
 
 .main-h2 {
     font-size: 48px;
-    font-weight: bold;
     padding: 15px 10px;
 }
 
