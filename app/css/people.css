@@ -5,17 +5,16 @@
 }
 
 .people-search-wrapper {
-    display: inline-block;
     background: #facc28;
     height: 40px;
     line-height: 40px;
     padding: 0 10px;
-    min-width: 40px;
-    text-align: center;
+    width: 400px;
     margin-bottom: 5px;
 }
 
 .people-search-input {
+    width: 330px;
     margin: 10px;
 }
 
