@@ -857,6 +857,21 @@ var APP = {};
         people.push(newLector);
         data.setStorage();
     }
+    APP.Data.getLecture = function(id){
+        var data = APP.Data,
+            lectures = data.Tables.lectures,
+            lecture,
+            l,
+            i;
+        l = lectures.length;
+        for (i = 0; i < l; i++) {
+            lecture = lectures[i];
+            if (lecture.id == id) {
+                return lecture;
+            }
+        }
+        return false;
+    }
 
 
     APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);

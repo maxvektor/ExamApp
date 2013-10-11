@@ -5,7 +5,5 @@ function LecturesListCtrl($scope) {
         var lector = APP.Data.getHuman(id);
         return lector.fName + " " + lector.lName;
     };
-    $scope.log = function (name, text) {
-        console.log(name + " " + text);
-    };
+
 }
