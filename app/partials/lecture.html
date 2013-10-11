@@ -1,5 +1,15 @@
 <h1 class="lesson-name-header">{{ lecture.name }}</h1>
+<div class="lesson-person">
+    <div class="lesson-person-name f-l">
+        <a href="#/lectors/{{ teacher.id }}" class="lesson-link"> {{ teacher.fName }} {{ teacher.lName }}</a>
+    </div>
+    <div class="lesson-person-img">
+        <a href="#/lectors/{{ teacher.id }}"> <img ng-src="{{ teacher.photos.m }}"> </a>
+    </div>
+
+</div>
 <div class="lesson-media-holder">
+
     <div class="lesson-video" ng-hide="!lecture.video_url">
         <iframe class="player" width="750" height="263"
                 src="{{ lecture.video_url }}"></iframe>
