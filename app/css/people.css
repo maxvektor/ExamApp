@@ -2,16 +2,21 @@
     -moz-column-width: 210px;
     -webkit-column-width: 210px;
     column-width: 210px;
-    position: absolute;
 }
 
 .people-search-wrapper {
+    display: inline-block;
     background: #facc28;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    min-width: 40px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
 .people-search-input {
     margin: 10px;
-    width: 90%;
 }
 
 .people-card {
