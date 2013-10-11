@@ -1,12 +1,13 @@
 .main-wrapper {
     right: 0;
-    background-image: url("../img/wallpaper/wall2.jpg");
-    background-size: 100% 100%;
+    background-image: url("../img/wallpaper/wall1.jpg");
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-color: #000945;
 }
 
 .content-wrapper {
-    background: rgba(100, 100, 100, 0.9);
+    background: rgba(100, 100, 100, .5);
     padding: 15px;
     overflow: auto;
     min-width: 500px;
