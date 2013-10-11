@@ -1,8 +1,4 @@
 .main-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
     right: 0;
     background-image: url("../img/wallpaper/wall2.jpg");
     background-size: 100% 100%;
@@ -10,15 +6,12 @@
 }
 
 .content-wrapper {
-    position: absolute;
-    top: 5%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
     background: rgba(100, 100, 100, 0.9);
     padding: 15px;
     overflow: auto;
     min-width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .main-menu {
