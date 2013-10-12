@@ -4,7 +4,9 @@
         <a href="#/teachers/{{ teacher.id }}" class="lesson-link"> {{ teacher.fName }} {{ teacher.lName }}</a>
     </div>
     <div class="lesson-person-img">
-        <a href="#/teachers/{{ teacher.id }}"> <img ng-src="{{ teacher.photos.m }}"> </a>
+        <a href="#/teachers/{{ teacher.id }}">
+            <img ng-src="{{ teacher.photos.m }}" alt="{{ teacher.fName }} {{ teacher.lName }}"/>
+        </a>
     </div>
 
 </div>

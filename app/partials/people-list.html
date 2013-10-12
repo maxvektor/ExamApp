@@ -6,8 +6,9 @@
          ng-repeat="human in people | filter:searchQuery |filter:{roleId: groupId}">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
-                <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">{{human.lName}} {{ human.fName
-                    }}</a>
+                <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">
+                    {{human.lName}} {{ human.fName }}
+                </a>
             </div>
             <div class="people-card-top-control">
                 <span ng-click="collapse(human.id)"
@@ -20,7 +21,7 @@
             </div>
         </div>
         <div class="people-card-img">
-            <img class="people-card-img-pic" ng-src="{{ human.photos.b }} ">
+            <img class="people-card-img-pic" ng-src="{{ human.photos.b }}" />
         </div>
         <div class="people-card-about">
             {{ human.about }}
@@ -34,7 +35,7 @@
                 </div>
             </div>
             <div class="people-card-img">
-                <img class="people-card-img-pic" ng-src="app/img/des/dummy_{{ groupName }}.jpg">
+                <img class="people-card-img-pic" ng-src="app/img/des/dummy_{{ groupName }}.jpg" alt=" {{human.lName}} {{ human.fName }}"/>
             </div>
         </a>
     </div>
