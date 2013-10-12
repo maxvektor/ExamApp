@@ -1,4 +1,4 @@
-function StudentEditCtrl($scope, $routeParams, $location) {
+APP.Ctrls.StudentEditCtrl = function ($scope, $routeParams, $location) {
     $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);
     $scope.city = APP.Data.getCity($scope.human.city).name;
@@ -20,4 +20,4 @@ function StudentEditCtrl($scope, $routeParams, $location) {
         $scope.newURI = "/students/" + $scope.id;
         $location.path($scope.newURI);
     };
-}
+};

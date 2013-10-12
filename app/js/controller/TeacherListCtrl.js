@@ -1,4 +1,4 @@
-function TeacherListCtrl($scope) {
+APP.Ctrls.TeacherListCtrl = function ($scope) {
     $scope.people = APP.Data.Tables.people;
     $scope.groupId = "1";
     $scope.groupName = "teachers";
@@ -9,7 +9,7 @@ function TeacherListCtrl($scope) {
 
     $scope.collapse = function (id) {
         var index = APP.Data.getHumanIndex(id),
-        human = $scope.people[index];
+            human = $scope.people[index];
         human.isCollapsed = !human.isCollapsed;
     };
-}
+};

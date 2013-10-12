@@ -1,4 +1,4 @@
-function TeacherAddCtrl($scope, $location) { //TODO: Think about how to join similar controllers
+APP.Ctrls.TeacherAddCtrl = function ($scope, $location) { //TODO: Think about how to join similar controllers
     $scope.human = {};
     $scope.human.social = {};
     $scope.human.photos = {};
@@ -15,4 +15,4 @@ function TeacherAddCtrl($scope, $location) { //TODO: Think about how to join sim
         $scope.newURI = "/teachers/";
         $location.path($scope.newURI);
     };
-}
+};

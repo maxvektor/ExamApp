@@ -1,4 +1,4 @@
-function StudentCtrl($scope, $routeParams) {
+APP.Ctrls.StudentCtrl = function ($scope, $routeParams) {
     $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);
     $scope.city = $scope.human.city;
@@ -6,4 +6,4 @@ function StudentCtrl($scope, $routeParams) {
     $scope.vk = $scope.human.social.vk;
     $scope.git = $scope.human.social.git;
     $scope.ya = $scope.human.social.ya;
-}
+};

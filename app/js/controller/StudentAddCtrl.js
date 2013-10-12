@@ -1,4 +1,4 @@
-function StudentAddCtrl($scope, $location) {
+APP.Ctrls.StudentAddCtrl = function ($scope, $location) {
     $scope.human = {};
     $scope.human.social = {};
     $scope.human.photos = {};
@@ -22,4 +22,4 @@ function StudentAddCtrl($scope, $location) {
         $scope.newURI = "/students/";
         $location.path($scope.newURI);
     };
-}
+};

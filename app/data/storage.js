@@ -1,4 +1,3 @@
-var APP = {};
 (function () {
     var APPDATA, appData;
 
