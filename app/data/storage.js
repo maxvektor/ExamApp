@@ -1,9 +1,23 @@
-var APP = {};
 (function () {
+    /**
+     *String const - name of the key for Application data in LocalStorage
+     * @const
+     */
     var APPDATA = "AppData",
-        appData = store.get(APPDATA);
-
+        /**
+         * stores data from local storage
+         * @type {Object}
+         */
+            appData;
+    /**
+     * stores models, eow data and storage API
+     * @type {Object}
+     */
     APP.Data = {};
+    /**
+     * stores simple JSON array of Students before processing to main Tables
+     * @type {Array}
+     */
     APP.Data.RawStudents = [
         {
             "Timestamp": "9/28/2013 2:51:14",
@@ -414,7 +428,11 @@ var APP = {};
             }
         }
     ];
-    APP.Data.RawLectors = [
+    /**
+     * stores simple JSON array of Teachers before processing to main Tables
+     * @type {Array}
+     */
+    APP.Data.RawTeachers = [
         {
             "id": "134",
             "fName": "Алексей ",
@@ -514,31 +532,35 @@ var APP = {};
             "photosNumber": "14"
         }
     ];
+    /**
+     * stores simple JSON array of Lectures (lessons) before processing to main Tables
+     * @type {Array}
+     */
     APP.Data.RawLectures = [
         {
             "id": 35,
-            "lector_id": 131,
+            "teacher_id": 131,
             "video_url": "http://video.yandex.ru/iframe/ya-events/nvby8zm0d8.3121/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263503",
             "name": "Изучение и редактирование кода "
         },
         {
             "id": 36,
-            "lector_id": 134,
+            "teacher_id": 134,
             "video_url": "http://video.yandex.ru/iframe/ya-events/gmhj6jhjbq.7339/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497344",
             "name": "Развертывание верстки"
         },
         {
             "id": 37,
-            "lector_id": 127,
+            "teacher_id": 127,
             "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
             "name": "http-протокол"
         },
         {
             "id": 38,
-            "lector_id": 127,
+            "teacher_id": 127,
             "native_id": 1329,
             "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
@@ -546,97 +568,100 @@ var APP = {};
         },
         {
             "id": 39,
-            "lector_id": 130,
+            "teacher_id": 130,
             "video_url": "http://video.yandex.ru/iframe/ya-events/0tk8ubi12b.7216/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501207",
             "name": "Кеширование на клиенте и сервере"
         },
         {
             "id": 40,
-            "lector_id": 137,
+            "teacher_id": 137,
             "video_url": "http://video.yandex.ru/iframe/ya-events/4fcm2v836x.2020/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501715",
             "name": "Безопасность веб-приложений"
         },
         {
             "id": 41,
-            "lector_id": 134,
+            "teacher_id": 134,
             "video_url": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26502148",
             "name": "Регулярные выражения "
         },
         {
             "id": 42,
-            "lector_id": 126,
+            "teacher_id": 126,
             "video_url": "http://video.yandex.ru/iframe/ya-events/yc39l9dh0a.4723/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263542",
             "name": "Командная строка Unix"
         },
         {
             "id": 43,
-            "lector_id": 128,
+            "teacher_id": 128,
             "video_url": null,
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26503527",
             "name": "Архитектура веб-сервисов"
         },
         {
             "id": 44,
-            "lector_id": 128,
+            "teacher_id": 128,
             "video_url": "http://video.yandex.ru/iframe/ya-events/uery0fxkg2.7247/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501860",
             "name": "Языки программирования "
         },
         {
             "id": 45,
-            "lector_id": 132,
+            "teacher_id": 132,
             "video_url": "http://video.yandex.ru/iframe/ya-events/u7neb4ukb7.4729/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26495249",
             "name": "Тестирование"
         },
         {
             "id": 46,
-            "lector_id": 135,
+            "teacher_id": 135,
             "video_url": "http://video.yandex.ru/iframe/ya-events/oeunffeksq.5100/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Cистемы контроля версий "
         },
         {
             "id": 47,
-            "lector_id": 136,
+            "teacher_id": 136,
             "video_url": "http://video.yandex.ru/iframe/ya-events/mifh2zd4xw.7143/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263370",
             "name": "Вики-синтаксис"
         },
         {
             "id": 48,
-            "lector_id": 136,
+            "teacher_id": 136,
             "video_url": "http://video.yandex.ru/iframe/ya-events/hlgkkpcf67.3822/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Документирование информации"
         },
         {
             "id": 49,
-            "lector_id": 133,
+            "teacher_id": 133,
             "video_url": "http://video.yandex.ru/iframe/ya-events/u7myq83g9q.4811/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263573",
             "name": "Общий цикл разработки (dev-cycle)"
         },
         {
             "id": 50,
-            "lector_id": 125,
+            "teacher_id": 125,
             "video_url": "http://video.yandex.ru/iframe/ya-events/r29oly6fy4.4720/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263315",
             "name": "Вводная по ШРИ"
         },
         {
             "id": 51,
-            "lector_id": 129,
+            "teacher_id": 129,
             "video_url": "http://video.yandex.ru/iframe/ya-events/vnsrv1de6g.4103/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "История успеха выпускников ШРИ"
         }
     ];
-
+    /**
+     * stores JS Arrays array of Lectures, Students, Teachers, Cities and Countries  after processing
+     * @type {Array}
+     */
     APP.Data.Tables = {
         roles: [
             {
@@ -684,205 +709,357 @@ var APP = {};
 
         ]
     };
+
+    /**
+     * Processed raw data (Array of students) to Table
+     * @name rawStudentsToPeopleArray
+     * @param {Array} rawArr - JSON with students
+     */
     APP.Data.rawStudentsToPeopleArray = function (rawArr) {
-        var newStudent,
-            student,
-            i,
-            l = rawArr.length,
-            d = APP.Data;
-        for (i = 0; i < l; i++) {//TODO: remove this ugly shit with some normal code
+        var newStudent, student, i, city, length, data, cityId;
+        data = APP.Data;
+        length = rawArr.length;
+        for (i = 0; i < length; i++) {
             student = rawArr[i];
             newStudent = {};
             newStudent.fName = student.first_name;
             newStudent.lName = student.last_name;
             newStudent.about = student.about;
-            newStudent.id = d.getMaxHumanId();
+            newStudent.id = data.getNextHumanId();
             newStudent.roleId = 2;
-            newStudent.city = d.getCityId(student.city);
             newStudent.social = {
                 vk: student.link_vk,
                 fb: student.link_facebook,
                 ya: student.link_yaru,
                 git: student.link_gihub
             };
+            city = data.getCity(student.city); //
+            if (city) {
+                newStudent.city = city.id;
+            } else {
+                cityId = data.addCity(student.city);
+                newStudent.city = cityId;
+            }
+
             if (student.photos) {
-                newStudent.photos = student.photos
-            } else
+                newStudent.photos = student.photos;
+            } else {
                 newStudent.photos = {
                     s: student.link_photo,
                     m: student.link_photo,
                     b: student.link_photo
                 };
-
-            d.Tables.people.push(newStudent);
+            }
+            data.Tables.people.push(newStudent);
         }
     };
-    APP.Data.rawLectorsToPeopleArray = function (rawArr) {
-        var PATHTOPHOTO = "app/img/lectors/",
-            newLector,
-            i,
-            l = rawArr.length,
-            d = APP.Data;
-        for (i = 0; i < l; i++) {
-            lector = rawArr[i];
-            newLector = lector;
-            newLector.roleId = 1;
-            newLector.photos = {
-                s: PATHTOPHOTO + "s/" + lector.photosNumber + ".jpg",
-                m: PATHTOPHOTO + "m/" + lector.photosNumber + ".jpg",
-                b: PATHTOPHOTO + "b/" + lector.photosNumber + ".jpg"
+    /**
+     * Processed raw data (Array of Teachers) to Table
+     * @name rawTeachersToPeopleArray
+     * @param {Array} rawArr - JSON with Teachers
+     */
+    APP.Data.rawTeachersToPeopleArray = function (rawArr) {
+        var PATHTOPHOTO, newTeacher, i, length , data, teacher;
+        PATHTOPHOTO = "app/img/teachers/";//TODO: rename folder, remake paths
+        length = rawArr.length;
+        data = APP.Data;
+        for (i = 0; i < length; i++) {
+            teacher = rawArr[i];
+            newTeacher = teacher;
+            newTeacher.roleId = 1;
+            newTeacher.photos = {
+                s: PATHTOPHOTO + "s/" + teacher.photosNumber + ".jpg",
+                m: PATHTOPHOTO + "m/" + teacher.photosNumber + ".jpg",
+                b: PATHTOPHOTO + "b/" + teacher.photosNumber + ".jpg"
             };
-            d.Tables.people.push(newLector);
+            data.Tables.people.push(newTeacher);
         }
     };
-    APP.Data.RawLecturesToTable = function (rawArr) {
+    /**
+     * Processed raw data (Array of Lessons) to Table
+     * @name rawLessonsToTable
+     * @param {Array} rawArr - JSON with Lessons
+     */
+    APP.Data.rawLessonsToTable = function (rawArr) {
         APP.Data.Tables.lectures = rawArr;
     };
-    APP.Data.getMaxHumanId = function () {
-        var maxId, people, i, l, human;
+    /**
+     * Returns id for new Human
+     * @name getNextHumanId
+     * @return {number} maxId - id for new Human
+     */
+    APP.Data.getNextHumanId = function () {
+        var maxId, people, i, length, human;
         maxId = 0;
         people = APP.Data.Tables.people;
-        l = people.length;
-        for (i = 0; i < l; i++) {
+        length = people.length;
+        for (i = 0; i < length; i++) {
             human = people[i];
-            maxId = human.id > maxId ? human.id : maxId;
+            if (human.id > maxId) {
+                maxId = human.id;
+            }
         }
-        APP.Data.getMaxHumanId = function () {
+        /**
+         * Returns id for new Human
+         * @name getNextHumanId
+         * @returns {number} maxId - id for new Human
+         * @override
+         */
+        APP.Data.getNextHumanId = function () {
             ++maxId;
             return maxId;
         };
+        maxId++;
         return maxId;
     };
-    APP.Data.getCityId = function (name) {
-        var cityArr = APP.Data.Tables.city,
-            i,
-            city,
-            maxId;
-        maxId = cityArr.length;
-        for (i = 0; i < maxId; i++) {
-            city = cityArr[i];
-            if (city.name == name) return city.id;
+    /**
+     * Returns Human by id or last name
+     * @name getHuman
+     * @param param{string|number} - last name or id of human (better use id)
+     * @return {Object|boolean} human or false if no human found
+     */
+    APP.Data.getHuman = function (param) {
+        var data, people , human, length, i, id, name;
+        data = APP.Data;
+        people = data.Tables.people;
+        length = people.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
         }
-        ++maxId;
-        cityArr.push(
-            {
-                id: maxId,
-                countryId: 1,
-                name: name
-            }
-        );
-        return maxId
-    };
-    APP.Data.getHuman = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            human,
-            l,
-            i;
-        l = people.length;
-        for (i = 0; i < l; i++) {
+
+        for (i = 0; i < length; i++) {
             human = people[i];
-            if (human.id == id) {
+            if (human.id == id || human.lName == name) {
                 return human;
             }
         }
         return false;
     };
-    APP.Data.getCity = function (id) {
-        var cityArr = APP.Data.Tables.city,
-            i, l, city;
-        l = cityArr.length;
-        for (i = 0; i < l; i++) {
+    /**
+     * Returns City by id or name
+     * @name getCity
+     * @param param{string|number} -  name or id of city
+     * @return {Object|boolean} City or false if no City found
+     */
+    APP.Data.getCity = function (param) {
+        var cityArr, i, length, city, name, id;
+        cityArr = APP.Data.Tables.city;
+        length = cityArr.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
+        }
+        for (i = 0; i < length; i++) {
             city = cityArr[i];
-            if (city.id == id) {
-                return city.name;
+            if (city.id == id || city.name == name) {
+                return city;
             }
         }
         return false;
     };
-    APP.Data.setStorage = function () {
-        store.set(APPDATA, APP.Data.Tables);
+    /**
+     * Returns id for new City
+     * @name getNextCityId
+     * @return {number} maxId - id for new City
+     */
+    APP.Data.getNextCityId = function () {
+        var cityArr, i, city, maxId, length;
+        cityArr = APP.Data.Tables.city;
+        length = cityArr.length;
+        maxId = 0;
+        for (i = 0; i < length; i++) {
+            city = cityArr[i];
+            if (maxId < city.id) {
+                maxId = city.id;
+            }
+        }
+        /**
+         * Returns id for new City
+         * @name getNextCityId
+         * @return {number} maxId - id for new City
+         * @override
+         */
+        APP.Data.getNextCityId = function () {
+            maxId++;
+            return maxId
+        };
+        maxId++;
+        return maxId;
     };
-    APP.Data.getStorage = function () {
-        APP.Data.Tables = store.get(APPDATA);
-    };
-    APP.Data.removeHuman = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            index = data.getHumanIndexById(id);
+    /**
+     * Removes Human by id or last name from Tables
+     * @name removeHuman
+     * @param param{string|number} - last name or id of human (better use id)
+     * @return {Object|boolean} human or false if no human found
+     * After removing local Storage will be updated
+     */
+    APP.Data.removeHuman = function (param) {
+        var data, people, index;
+        data = APP.Data;
+        people = data.Tables.people;
+        index = data.getHumanIndex(param);
         people.splice(index, 1);
         data.setStorage();
     };
-    APP.Data.getHumanIndexById = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            student,
-            l,
-            i;
-        l = people.length;
-        for (i = 0; i < l; i++) {
-            student = people[i];
-            if (student.id == id) {
-                return i;
-            }
-        }
-        return -1;
-    };
-    APP.Data.updateHumanById = function (id, updatedHuman) {
+    /**
+     * Updates Human by id or last name
+     * @name updateHuman
+     * @param updatedHuman{Object} - object Human
+     * After update local Storage will be updated
+     */
+    APP.Data.updateHuman = function (updatedHuman) {
         var attribute, data, people, index, human;
         data = APP.Data;
         people = data.Tables.people;
-        index = data.getHumanIndexById(id);
+        index = data.getHumanIndex(updatedHuman.id);
         human = people[index];
         for (attribute in updatedHuman) {
             human.attribute = updatedHuman.attribute;
         }
         data.setStorage();
     };
-    APP.Data.addStudent = function (student, id) {
-        var newStudent, data, people;
+    /**
+     * Returns index of human in array Tables.people
+     * @name getHumanIndex
+     * @param param{string|number|Object} - last name, id or Human object
+     * @return {number} index in Tables.people (-1 if no math found)
+     */
+    APP.Data.getHumanIndex = function (param) {
+        var data, people , human, length, i, id, name;
         data = APP.Data;
         people = data.Tables.people;
-        newStudent = student;
-        newStudent.id = id;
-        people.push(newStudent);
-        data.setStorage();
-    };//TODO - Remove id param from add functions
-    APP.Data.addLector = function (lector, id) {
-        var newLector, data, people;
+        length = people.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            case "object":
+                name = param.name;
+                id = param.id;
+                break;
+            default:
+                return -1;
+        }
+        for (i = 0; i < length; i++) {
+            human = people[i];
+            if (human.id == id || human.name == name) {
+                return i;
+            }
+        }
+        return -1;
+    };
+    /**
+     * Creates new instance in array Tables.people
+     * @name addHuman
+     * @param human{Object} - scaffold of human (has no id)
+     * @return {number} id of new instance of human
+     * local Storage will be updated
+     */
+    APP.Data.addHuman = function (human) {
+        var newHuman, data, people;
         data = APP.Data;
         people = data.Tables.people;
-        newLector = lector;
-        newLector.id = id;
-        people.push(newLector);
+        newHuman = human;
+        newHuman.id = data.getNextHumanId();
+        people.push(newHuman);
         data.setStorage();
-    }
-    APP.Data.getLecture = function(id){
-        var data = APP.Data,
-            lectures = data.Tables.lectures,
-            lecture,
-            l,
-            i;
-        l = lectures.length;
-        for (i = 0; i < l; i++) {
+        return newHuman.id;
+    };
+    /**
+     * Returns Lecture by id or name
+     * @name getLecture
+     * @param param{string|number} -  name or id of lecture
+     * @return {Object|boolean} Lecture or false if no Lecture was found
+     */
+    APP.Data.getLecture = function (param) {
+        var data, lectures, lecture, length, name, id, i;
+        data = APP.Data;
+        lectures = data.Tables.lectures;
+        length = lectures.length;
+
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
+        }
+        for (i = 0; i < length; i++) {
             lecture = lectures[i];
-            if (lecture.id == id) {
+            if (lecture.id == param || lecture.name == name) {
                 return lecture;
             }
         }
         return false;
-    }
+    };
+    /**
+     * Creates new instance in array Tables.city
+     * @name addCity
+     * @param name{string} - name of the city
+     * @return {number} id of new instance of city
+     * local Storage will be NOT updated
+     */
+    APP.Data.addCity = function (name) {
+        var data, cityId;
+        data = APP.Data;
+        cityId = data.getNextCityId();
+        data.Tables.city.push({
+            id: cityId,
+            countryId: 1,
+            name: name
+        });
+        return cityId;
+    };
+    /**
+     * Stores Tables in local Storage
+     * @name setStorage
+     */
+    APP.Data.setStorage = function () {
+        store.set(APPDATA, APP.Data.Tables);
+    };
+    /**
+     * overrides Tables from local Storage
+     * @name getStorage
+     */
+    APP.Data.getStorage = function () {
+        APP.Data.Tables = store.get(APPDATA);
+    };
 
 
-    APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
-    APP.Data.rawLectorsToPeopleArray(APP.Data.RawLectors);
-    APP.Data.RawLecturesToTable(APP.Data.RawLectures);
+    /**
+     *initialization of data
+     * if localstorage contains some object with key APPDATA, Tables will be restored from LS
+     * Otherwise LS will be filled in after initialization
+     */
+    (function () {
+        appData = store.get(APPDATA);
+        if (appData) {
+            APP.Data.getStorage();
+        } else {
+            APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
+            APP.Data.rawTeachersToPeopleArray(APP.Data.RawTeachers);
+            APP.Data.rawLessonsToTable(APP.Data.RawLectures);
+            APP.Data.setStorage();
+        }
+    })();
 
-    if (appData) {
-        APP.Data.getStorage();
-    } else {
-        APP.Data.setStorage();
-    }
-
-
-})();
+}());

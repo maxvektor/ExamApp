@@ -1,9 +1,13 @@
-function StudentCtrl($scope, $routeParams) {
-    $scope.id = $routeParams.id;
-    $scope.human = APP.Data.getHuman($scope.id);
+/**
+ * This is controller of the single Student page
+ * @name StudentCtrl
+ */
+APP.Ctrls.StudentCtrl = function ($scope, $routeParams) {
+    $scope.id = parseInt($routeParams.id);
+    $scope.human = APP.Data.getHuman($scope.id);//TODO: check for presents of the object fields
     $scope.city = $scope.human.city;
     $scope.fb = $scope.human.social.fb;
-    $scope.vk= $scope.human.social.vk;
+    $scope.vk = $scope.human.social.vk;
     $scope.git = $scope.human.social.git;
     $scope.ya = $scope.human.social.ya;
-}
+};
