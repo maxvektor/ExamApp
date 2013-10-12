@@ -58,7 +58,12 @@ body{
 
 .main-menu-link {
     color: black;
+    font-weight: bold;
     text-decoration: none;
+}
+.main-island{
+    margin: 5px;
+    background: rgba(100, 100, 100, .7);
 }
 
 .main-h2 {
@@ -88,8 +93,7 @@ body{
 }
 
 .main-link {
-    color: black;
-    font-weight: bold;
+    color: #facc28;
     text-decoration: none;
 }
 
