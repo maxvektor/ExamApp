@@ -1,4 +1,4 @@
-function LectorCtrl($scope, $routeParams) {
+function TeacherCtrl($scope, $routeParams) {
     $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);
 }

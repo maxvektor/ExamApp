@@ -414,7 +414,7 @@ var APP = {};
         }
     ];
 
-    APP.Data.RawLectors = [
+    APP.Data.Rawteachers = [
         {
             "id": "134",
             "fName": "Алексей ",
@@ -518,28 +518,28 @@ var APP = {};
     APP.Data.RawLectures = [
         {
             "id": 35,
-            "lector_id": 131,
+            "teacher_id": 131,
             "video_url": "http://video.yandex.ru/iframe/ya-events/nvby8zm0d8.3121/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263503",
             "name": "Изучение и редактирование кода "
         },
         {
             "id": 36,
-            "lector_id": 134,
+            "teacher_id": 134,
             "video_url": "http://video.yandex.ru/iframe/ya-events/gmhj6jhjbq.7339/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497344",
             "name": "Развертывание верстки"
         },
         {
             "id": 37,
-            "lector_id": 127,
+            "teacher_id": 127,
             "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
             "name": "http-протокол"
         },
         {
             "id": 38,
-            "lector_id": 127,
+            "teacher_id": 127,
             "native_id": 1329,
             "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
@@ -547,91 +547,91 @@ var APP = {};
         },
         {
             "id": 39,
-            "lector_id": 130,
+            "teacher_id": 130,
             "video_url": "http://video.yandex.ru/iframe/ya-events/0tk8ubi12b.7216/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501207",
             "name": "Кеширование на клиенте и сервере"
         },
         {
             "id": 40,
-            "lector_id": 137,
+            "teacher_id": 137,
             "video_url": "http://video.yandex.ru/iframe/ya-events/4fcm2v836x.2020/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501715",
             "name": "Безопасность веб-приложений"
         },
         {
             "id": 41,
-            "lector_id": 134,
+            "teacher_id": 134,
             "video_url": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26502148",
             "name": "Регулярные выражения "
         },
         {
             "id": 42,
-            "lector_id": 126,
+            "teacher_id": 126,
             "video_url": "http://video.yandex.ru/iframe/ya-events/yc39l9dh0a.4723/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263542",
             "name": "Командная строка Unix"
         },
         {
             "id": 43,
-            "lector_id": 128,
+            "teacher_id": 128,
             "video_url": null,
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26503527",
             "name": "Архитектура веб-сервисов"
         },
         {
             "id": 44,
-            "lector_id": 128,
+            "teacher_id": 128,
             "video_url": "http://video.yandex.ru/iframe/ya-events/uery0fxkg2.7247/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26501860",
             "name": "Языки программирования "
         },
         {
             "id": 45,
-            "lector_id": 132,
+            "teacher_id": 132,
             "video_url": "http://video.yandex.ru/iframe/ya-events/u7neb4ukb7.4729/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26495249",
             "name": "Тестирование"
         },
         {
             "id": 46,
-            "lector_id": 135,
+            "teacher_id": 135,
             "video_url": "http://video.yandex.ru/iframe/ya-events/oeunffeksq.5100/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Cистемы контроля версий "
         },
         {
             "id": 47,
-            "lector_id": 136,
+            "teacher_id": 136,
             "video_url": "http://video.yandex.ru/iframe/ya-events/mifh2zd4xw.7143/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263370",
             "name": "Вики-синтаксис"
         },
         {
             "id": 48,
-            "lector_id": 136,
+            "teacher_id": 136,
             "video_url": "http://video.yandex.ru/iframe/ya-events/hlgkkpcf67.3822/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Документирование информации"
         },
         {
             "id": 49,
-            "lector_id": 133,
+            "teacher_id": 133,
             "video_url": "http://video.yandex.ru/iframe/ya-events/u7myq83g9q.4811/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263573",
             "name": "Общий цикл разработки (dev-cycle)"
         },
         {
             "id": 50,
-            "lector_id": 125,
+            "teacher_id": 125,
             "video_url": "http://video.yandex.ru/iframe/ya-events/r29oly6fy4.4720/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26263315",
             "name": "Вводная по ШРИ"
         },
         {
             "id": 51,
-            "lector_id": 129,
+            "teacher_id": 129,
             "video_url": "http://video.yandex.ru/iframe/ya-events/vnsrv1de6g.4103/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "История успеха выпускников ШРИ"
@@ -729,7 +729,7 @@ var APP = {};
 
     APP.Data.rawTeachersToPeopleArray = function (rawArr) {
         var PATHTOPHOTO, newTeacher, i, length , data, teacher;
-        PATHTOPHOTO = "app/img/lectors/";//TODO: rename folder, remake paths
+        PATHTOPHOTO = "app/img/teachers/";//TODO: rename folder, remake paths
         length = rawArr.length;
         data = APP.Data;
         for (i = 0; i < length; i++) {
@@ -947,7 +947,7 @@ var APP = {};
             APP.Data.getStorage();
         } else {
             APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
-            APP.Data.rawTeachersToPeopleArray(APP.Data.RawLectors);
+            APP.Data.rawTeachersToPeopleArray(APP.Data.Rawteachers);
             APP.Data.rawLessonsToTable(APP.Data.RawLectures);
             APP.Data.setStorage();
         }

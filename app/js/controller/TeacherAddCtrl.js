@@ -1,4 +1,4 @@
-function LectorAddCtrl($scope, $location) { //TODO: Think about how to join similar controllers
+function TeacherAddCtrl($scope, $location) { //TODO: Think about how to join similar controllers
     $scope.human = {};
     $scope.human.social = {};
     $scope.human.photos = {};
@@ -7,12 +7,12 @@ function LectorAddCtrl($scope, $location) { //TODO: Think about how to join simi
 
     $scope.submit = function () {
         $scope.id = APP.Data.addHuman($scope.human);
-        $scope.newURI = "/lectors/" + $scope.id;
+        $scope.newURI = "/teachers/" + $scope.id;
         $location.path($scope.newURI);
     };
 
     $scope.reset = function () {
-        $scope.newURI = "/lectors/";
+        $scope.newURI = "/teachers/";
         $location.path($scope.newURI);
     };
 }

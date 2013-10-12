@@ -1,7 +1,7 @@
-function LectorListCtrl($scope) {
+function TeacherListCtrl($scope) {
     $scope.people = APP.Data.Tables.people;
     $scope.groupId = "1";
-    $scope.groupName = "lectors";
+    $scope.groupName = "teachers";
 
     $scope.remove = function (id) {
         APP.Data.removeHuman(id);

@@ -2,23 +2,23 @@ var main = angular.module('main', [], function ($routeProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'app/statics/main.html'
     });
-    $routeProvider.when('/lectors', {
+    $routeProvider.when('/teachers', {
         templateUrl: 'app/partials/people-list.html',
-        controller: LectorListCtrl
+        controller: TeacherListCtrl
     });
-    $routeProvider.when('/lectors/add', {
-        templateUrl: 'app/partials/lectors-add-edit.html',
-        controller: LectorAddCtrl
-    });
-
-    $routeProvider.when('/lectors/:id/edit', {
-        templateUrl: 'app/partials/lectors-add-edit.html',
-        controller: LectorEditCtrl
+    $routeProvider.when('/teachers/add', {
+        templateUrl: 'app/partials/teachers-add-edit.html',
+        controller: TeacherAddCtrl
     });
 
-    $routeProvider.when('/lectors/:id', {
-        templateUrl: 'app/partials/lector.html',
-        controller: LectorCtrl
+    $routeProvider.when('/teachers/:id/edit', {
+        templateUrl: 'app/partials/teachers-add-edit.html',
+        controller: TeacherEditCtrl
+    });
+
+    $routeProvider.when('/teachers/:id', {
+        templateUrl: 'app/partials/teacher.html',
+        controller: TeacherCtrl
     });
 
     $routeProvider.when('/students', {
