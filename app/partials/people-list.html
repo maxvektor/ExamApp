@@ -6,7 +6,8 @@
          ng-repeat="human in people | filter:searchQuery |filter:{roleId: groupId}">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
-                <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+                <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">{{human.lName}} {{ human.fName
+                    }}</a>
             </div>
             <div class="people-card-top-control">
                 <span ng-click="collapse(human.id)"
@@ -29,7 +30,7 @@
         <a class="people-card-name-link" href="#/{{ groupName }}/add">
             <div class="people-card-top">
                 <div class="people-card-top-name  f-l">
-                  [ Добавить ]
+                    [ Добавить ]
                 </div>
             </div>
             <div class="people-card-img">

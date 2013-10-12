@@ -1,5 +1,5 @@
-APP = {};
-APP.Ctrls={};
+var APP = {};
+APP.Ctrls = {};
 APP.main = angular.module('main', [], function ($routeProvider) {
     $routeProvider.when('/home', {
         templateUrl: 'app/statics/main.html'
