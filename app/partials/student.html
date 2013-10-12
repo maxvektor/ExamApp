@@ -2,7 +2,7 @@
 
 <div class="human-blockquote">
     <div class="human-photo">
-        <img src="{{ human.photos.b}}">
+        <img ng-src="{{ human.photos.b}}" alt="{{ human.fName }} {{ human.lName }}"/>
     </div>
     <p>
         {{ human.about }}
@@ -10,21 +10,21 @@
 </div>
 <div class="human-sotial" ng-hide="!fb">
     <a href="{{fb}}" target="_blank">
-        <img src="app/img/des/fb.png">
+        <img src="app/img/des/fb.png" alt="facebook"/>
     </a>
 </div>
 <div class="human-sotial" ng-hide="!git">
     <a href="{{ git }}" target="_blank">
-        <img src="app/img/des/git.png">
+        <img src="app/img/des/git.png" alt="github"/>
     </a>
 </div>
 <div class="human-sotial" ng-hide="!ya">
     <a href="{{ ya }}" target="_blank">
-        <img src="app/img/des/ya.png">
+        <img src="app/img/des/ya.png" alt="ya.ru"/>
     </a>
 </div>
 <div class="human-sotial" ng-hide="!vk">
     <a href="{{ vk }}" target="_blank">
-        <img src="app/img/des/vk.png">
+        <img src="app/img/des/vk.png" alt="vk.com"/>
     </a>
 </div>

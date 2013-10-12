@@ -1,10 +1,12 @@
 <h1 class="lesson-name-header">{{ lecture.name }}</h1>
 <div class="lesson-person">
     <div class="lesson-person-name f-l">
-        <a href="#/lectors/{{ teacher.id }}" class="lesson-link"> {{ teacher.fName }} {{ teacher.lName }}</a>
+        <a href="#/teachers/{{ teacher.id }}" class="lesson-link"> {{ teacher.fName }} {{ teacher.lName }}</a>
     </div>
     <div class="lesson-person-img">
-        <a href="#/lectors/{{ teacher.id }}"> <img ng-src="{{ teacher.photos.m }}"> </a>
+        <a href="#/teachers/{{ teacher.id }}">
+            <img ng-src="{{ teacher.photos.m }}" alt="{{ teacher.fName }} {{ teacher.lName }}"/>
+        </a>
     </div>
 
 </div>

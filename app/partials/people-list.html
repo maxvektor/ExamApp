@@ -3,15 +3,17 @@
 </div>
 <div class="people-container">
     <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card"
-         ng-repeat="human in people | filter:searchQuery |filter:{roleId: cureId}">
+         ng-repeat="human in people | filter:searchQuery |filter:{roleId: groupId}">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
-                <a class="people-card-name-link" href="#/{{ group }}/{{human.id}}">{{human.lName}} {{ human.fName }}</a>
+                <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">
+                    {{human.lName}} {{ human.fName }}
+                </a>
             </div>
             <div class="people-card-top-control">
                 <span ng-click="collapse(human.id)"
                       class="people-card-top-control-btn people-card-top-control-collapse"></span>
-                <a href="#/{{ group }}/{{ human.id }}/edit">
+                <a href="#/{{ groupName }}/{{ human.id }}/edit">
                     <span class="people-card-top-control-btn people-card-top-control-edit"></span>
                 </a>
                 <span ng-click="remove( human.id )"
@@ -19,21 +21,21 @@
             </div>
         </div>
         <div class="people-card-img">
-            <img class="people-card-img-pic" ng-src="{{ human.photos.b }} ">
+            <img class="people-card-img-pic" ng-src="{{ human.photos.b }}" />
         </div>
         <div class="people-card-about">
             {{ human.about }}
         </div>
     </div>
     <div ng-class="{'people-card-collapsed' : human.isCollapsed }" class="people-card">
-        <a class="people-card-name-link" href="#/{{ group }}/add">
+        <a class="people-card-name-link" href="#/{{ groupName }}/add">
             <div class="people-card-top">
                 <div class="people-card-top-name  f-l">
-                  [ Добавить ]
+                    [ Добавить ]
                 </div>
             </div>
             <div class="people-card-img">
-                <img class="people-card-img-pic" src="app/img/des/dummy_{{ group }}.jpg">
+                <img class="people-card-img-pic" ng-src="app/img/des/dummy_{{ groupName }}.jpg" alt=" {{human.lName}} {{ human.fName }}"/>
             </div>
         </a>
     </div>
