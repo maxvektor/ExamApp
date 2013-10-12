@@ -1,7 +1,23 @@
 (function () {
-    var APPDATA, appData;
-
+    /**
+     *String const - name of the key for Application data in LocalStorage
+     * @const
+     */
+    var APPDATA = "AppData",
+        /**
+         * stores data from local storage
+         * @type {Object}
+         */
+            appData;
+    /**
+     * stores models, eow data and storage API
+     * @type {Object}
+     */
     APP.Data = {};
+    /**
+     * stores simple JSON array of Students before processing to main Tables
+     * @type {Array}
+     */
     APP.Data.RawStudents = [
         {
             "Timestamp": "9/28/2013 2:51:14",
@@ -412,8 +428,11 @@
             }
         }
     ];
-
-    APP.Data.Rawteachers = [
+    /**
+     * stores simple JSON array of Teachers before processing to main Tables
+     * @type {Array}
+     */
+    APP.Data.RawTeachers = [
         {
             "id": "134",
             "fName": "Алексей ",
@@ -513,7 +532,10 @@
             "photosNumber": "14"
         }
     ];
-
+    /**
+     * stores simple JSON array of Lectures (lessons) before processing to main Tables
+     * @type {Array}
+     */
     APP.Data.RawLectures = [
         {
             "id": 35,
@@ -636,7 +658,10 @@
             "name": "История успеха выпускников ШРИ"
         }
     ];
-
+    /**
+     * stores JS Arrays array of Lectures, Students, Teachers, Cities and Countries  after processing
+     * @type {Array}
+     */
     APP.Data.Tables = {
         roles: [
             {
@@ -685,6 +710,11 @@
         ]
     };
 
+    /**
+     * Processed raw data (Array of students) to Table
+     * @name rawStudentsToPeopleArray
+     * @param {Array} rawArr - JSON with students
+     */
     APP.Data.rawStudentsToPeopleArray = function (rawArr) {
         var newStudent, student, i, city, length, data, cityId;
         data = APP.Data;
@@ -703,8 +733,7 @@
                 ya: student.link_yaru,
                 git: student.link_gihub
             };
-            city = data.getCity(student.city);
-
+            city = data.getCity(student.city); //
             if (city) {
                 newStudent.city = city.id;
             } else {
@@ -721,11 +750,14 @@
                     b: student.link_photo
                 };
             }
-
             data.Tables.people.push(newStudent);
         }
     };
-
+    /**
+     * Processed raw data (Array of Teachers) to Table
+     * @name rawTeachersToPeopleArray
+     * @param {Array} rawArr - JSON with Teachers
+     */
     APP.Data.rawTeachersToPeopleArray = function (rawArr) {
         var PATHTOPHOTO, newTeacher, i, length , data, teacher;
         PATHTOPHOTO = "app/img/teachers/";//TODO: rename folder, remake paths
@@ -743,11 +775,19 @@
             data.Tables.people.push(newTeacher);
         }
     };
-
+    /**
+     * Processed raw data (Array of Lessons) to Table
+     * @name rawLessonsToTable
+     * @param {Array} rawArr - JSON with Lessons
+     */
     APP.Data.rawLessonsToTable = function (rawArr) {
         APP.Data.Tables.lectures = rawArr;
     };
-
+    /**
+     * Returns id for new Human
+     * @name getNextHumanId
+     * @return {number} maxId - id for new Human
+     */
     APP.Data.getNextHumanId = function () {
         var maxId, people, i, length, human;
         maxId = 0;
@@ -759,6 +799,12 @@
                 maxId = human.id;
             }
         }
+        /**
+         * Returns id for new Human
+         * @name getNextHumanId
+         * @returns {number} maxId - id for new Human
+         * @override
+         */
         APP.Data.getNextHumanId = function () {
             ++maxId;
             return maxId;
@@ -766,7 +812,12 @@
         maxId++;
         return maxId;
     };
-
+    /**
+     * Returns Human by id or last name
+     * @name getHuman
+     * @param param{string|number} - last name or id of human (better use id)
+     * @return {Object|boolean} human or false if no human found
+     */
     APP.Data.getHuman = function (param) {
         var data, people , human, length, i, id, name;
         data = APP.Data;
@@ -791,7 +842,12 @@
         }
         return false;
     };
-
+    /**
+     * Returns City by id or name
+     * @name getCity
+     * @param param{string|number} -  name or id of city
+     * @return {Object|boolean} City or false if no City found
+     */
     APP.Data.getCity = function (param) {
         var cityArr, i, length, city, name, id;
         cityArr = APP.Data.Tables.city;
@@ -814,8 +870,12 @@
         }
         return false;
     };
-
-    APP.Data.getNewCityId = function () {
+    /**
+     * Returns id for new City
+     * @name getNextCityId
+     * @return {number} maxId - id for new City
+     */
+    APP.Data.getNextCityId = function () {
         var cityArr, i, city, maxId, length;
         cityArr = APP.Data.Tables.city;
         length = cityArr.length;
@@ -826,14 +886,26 @@
                 maxId = city.id;
             }
         }
-        APP.Data.getNewCityId = function () {
+        /**
+         * Returns id for new City
+         * @name getNextCityId
+         * @return {number} maxId - id for new City
+         * @override
+         */
+        APP.Data.getNextCityId = function () {
             maxId++;
             return maxId
         };
         maxId++;
         return maxId;
     };
-
+    /**
+     * Removes Human by id or last name from Tables
+     * @name removeHuman
+     * @param param{string|number} - last name or id of human (better use id)
+     * @return {Object|boolean} human or false if no human found
+     * After removing local Storage will be updated
+     */
     APP.Data.removeHuman = function (param) {
         var data, people, index;
         data = APP.Data;
@@ -842,7 +914,12 @@
         people.splice(index, 1);
         data.setStorage();
     };
-
+    /**
+     * Updates Human by id or last name
+     * @name updateHuman
+     * @param updatedHuman{Object} - object Human
+     * After update local Storage will be updated
+     */
     APP.Data.updateHuman = function (updatedHuman) {
         var attribute, data, people, index, human;
         data = APP.Data;
@@ -854,7 +931,12 @@
         }
         data.setStorage();
     };
-
+    /**
+     * Returns index of human in array Tables.people
+     * @name getHumanIndex
+     * @param param{string|number|Object} - last name, id or Human object
+     * @return {number} index in Tables.people (-1 if no math found)
+     */
     APP.Data.getHumanIndex = function (param) {
         var data, people , human, length, i, id, name;
         data = APP.Data;
@@ -882,7 +964,13 @@
         }
         return -1;
     };
-
+    /**
+     * Creates new instance in array Tables.people
+     * @name addHuman
+     * @param human{Object} - scaffold of human (has no id)
+     * @return {number} id of new instance of human
+     * local Storage will be updated
+     */
     APP.Data.addHuman = function (human) {
         var newHuman, data, people;
         data = APP.Data;
@@ -893,7 +981,12 @@
         data.setStorage();
         return newHuman.id;
     };
-
+    /**
+     * Returns Lecture by id or name
+     * @name getLecture
+     * @param param{string|number} -  name or id of lecture
+     * @return {Object|boolean} Lecture or false if no Lecture was found
+     */
     APP.Data.getLecture = function (param) {
         var data, lectures, lecture, length, name, id, i;
         data = APP.Data;
@@ -918,11 +1011,17 @@
         }
         return false;
     };
-
+    /**
+     * Creates new instance in array Tables.city
+     * @name addCity
+     * @param name{string} - name of the city
+     * @return {number} id of new instance of city
+     * local Storage will be NOT updated
+     */
     APP.Data.addCity = function (name) {
         var data, cityId;
         data = APP.Data;
-        cityId = data.getNewCityId();
+        cityId = data.getNextCityId();
         data.Tables.city.push({
             id: cityId,
             countryId: 1,
@@ -930,26 +1029,37 @@
         });
         return cityId;
     };
-
+    /**
+     * Stores Tables in local Storage
+     * @name setStorage
+     */
     APP.Data.setStorage = function () {
         store.set(APPDATA, APP.Data.Tables);
     };
-
+    /**
+     * overrides Tables from local Storage
+     * @name getStorage
+     */
     APP.Data.getStorage = function () {
         APP.Data.Tables = store.get(APPDATA);
     };
 
+
+    /**
+     *initialization of data
+     * if localstorage contains some object with key APPDATA, Tables will be restored from LS
+     * Otherwise LS will be filled in after initialization
+     */
     (function () {
-        APPDATA = "AppData";
         appData = store.get(APPDATA);
         if (appData) {
             APP.Data.getStorage();
         } else {
             APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
-            APP.Data.rawTeachersToPeopleArray(APP.Data.Rawteachers);
+            APP.Data.rawTeachersToPeopleArray(APP.Data.RawTeachers);
             APP.Data.rawLessonsToTable(APP.Data.RawLectures);
             APP.Data.setStorage();
         }
-    })(); //initialization of data
+    })();
 
 }());
