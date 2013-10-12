@@ -6,13 +6,12 @@ function LectorAddCtrl($scope, $location) { //TODO: Think about how to join simi
     $scope.readyText = "Добавить";
 
     $scope.submit = function () {
-        $scope.id = APP.Data.getMaxHumanId();
-        APP.Data.addLector($scope.human, $scope.id);
+        $scope.id = APP.Data.addHuman($scope.human);
         $scope.newURI = "/lectors/" + $scope.id;
         $location.path($scope.newURI);
     };
 
-    $scope.reset = function(){
+    $scope.reset = function () {
         $scope.newURI = "/lectors/";
         $location.path($scope.newURI);
     };

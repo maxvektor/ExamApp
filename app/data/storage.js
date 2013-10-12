@@ -1,10 +1,8 @@
 var APP = {};
 (function () {
-    var APPDATA = "AppData",
-        appData = store.get(APPDATA);
+    var APPDATA, appData;
 
     APP.Data = {};
-
     APP.Data.RawStudents = [
         {
             "Timestamp": "9/28/2013 2:51:14",
@@ -415,6 +413,7 @@ var APP = {};
             }
         }
     ];
+
     APP.Data.RawLectors = [
         {
             "id": "134",
@@ -515,6 +514,7 @@ var APP = {};
             "photosNumber": "14"
         }
     ];
+
     APP.Data.RawLectures = [
         {
             "id": 35,
@@ -685,205 +685,272 @@ var APP = {};
 
         ]
     };
+
     APP.Data.rawStudentsToPeopleArray = function (rawArr) {
-        var newStudent,
-            student,
-            i,
-            l = rawArr.length,
-            d = APP.Data;
-        for (i = 0; i < l; i++) {//TODO: remove this ugly shit with some normal code
+        var newStudent, student, i, city, length, data, cityId;
+        data = APP.Data;
+        length = rawArr.length;
+        for (i = 0; i < length; i++) {
             student = rawArr[i];
             newStudent = {};
             newStudent.fName = student.first_name;
             newStudent.lName = student.last_name;
             newStudent.about = student.about;
-            newStudent.id = d.getMaxHumanId();
+            newStudent.id = data.getNextHumanId();
             newStudent.roleId = 2;
-            newStudent.city = d.getCityId(student.city);
             newStudent.social = {
                 vk: student.link_vk,
                 fb: student.link_facebook,
                 ya: student.link_yaru,
                 git: student.link_gihub
             };
+            city = data.getCity(student.city);
+
+            if (city) {
+                newStudent.city = city.id;
+            } else {
+                cityId = data.addCity(student.city);
+                newStudent.city = cityId;
+            }
+
             if (student.photos) {
-                newStudent.photos = student.photos
-            } else
+                newStudent.photos = student.photos;
+            } else {
                 newStudent.photos = {
                     s: student.link_photo,
                     m: student.link_photo,
                     b: student.link_photo
                 };
+            }
 
-            d.Tables.people.push(newStudent);
+            data.Tables.people.push(newStudent);
         }
     };
-    APP.Data.rawLectorsToPeopleArray = function (rawArr) {
-        var PATHTOPHOTO = "app/img/lectors/",
-            newLector,
-            i,
-            l = rawArr.length,
-            d = APP.Data;
-        for (i = 0; i < l; i++) {
-            lector = rawArr[i];
-            newLector = lector;
-            newLector.roleId = 1;
-            newLector.photos = {
-                s: PATHTOPHOTO + "s/" + lector.photosNumber + ".jpg",
-                m: PATHTOPHOTO + "m/" + lector.photosNumber + ".jpg",
-                b: PATHTOPHOTO + "b/" + lector.photosNumber + ".jpg"
+
+    APP.Data.rawTeachersToPeopleArray = function (rawArr) {
+        var PATHTOPHOTO, newTeacher, i, length , data, teacher;
+        PATHTOPHOTO = "app/img/lectors/";//TODO: rename folder, remake paths
+        length = rawArr.length;
+        data = APP.Data;
+        for (i = 0; i < length; i++) {
+            teacher = rawArr[i];
+            newTeacher = teacher;
+            newTeacher.roleId = 1;
+            newTeacher.photos = {
+                s: PATHTOPHOTO + "s/" + teacher.photosNumber + ".jpg",
+                m: PATHTOPHOTO + "m/" + teacher.photosNumber + ".jpg",
+                b: PATHTOPHOTO + "b/" + teacher.photosNumber + ".jpg"
             };
-            d.Tables.people.push(newLector);
+            data.Tables.people.push(newTeacher);
         }
     };
-    APP.Data.RawLecturesToTable = function (rawArr) {
+
+    APP.Data.rawLessonsToTable = function (rawArr) {
         APP.Data.Tables.lectures = rawArr;
     };
-    APP.Data.getMaxHumanId = function () {
-        var maxId, people, i, l, human;
+
+    APP.Data.getNextHumanId = function () {
+        var maxId, people, i, length, human;
         maxId = 0;
         people = APP.Data.Tables.people;
-        l = people.length;
-        for (i = 0; i < l; i++) {
+        length = people.length;
+        for (i = 0; i < length; i++) {
             human = people[i];
-            maxId = human.id > maxId ? human.id : maxId;
+            if (human.id > maxId) {
+                maxId = human.id;
+            }
         }
-        APP.Data.getMaxHumanId = function () {
+        APP.Data.getNextHumanId = function () {
             ++maxId;
             return maxId;
         };
+        maxId++;
         return maxId;
     };
-    APP.Data.getCityId = function (name) {
-        var cityArr = APP.Data.Tables.city,
-            i,
-            city,
-            maxId;
-        maxId = cityArr.length;
-        for (i = 0; i < maxId; i++) {
-            city = cityArr[i];
-            if (city.name == name) return city.id;
+
+    APP.Data.getHuman = function (param) {
+        var data, people , human, length, i, id, name;
+        data = APP.Data;
+        people = data.Tables.people;
+        length = people.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
         }
-        ++maxId;
-        cityArr.push(
-            {
-                id: maxId,
-                countryId: 1,
-                name: name
-            }
-        );
-        return maxId
-    };
-    APP.Data.getHuman = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            human,
-            l,
-            i;
-        l = people.length;
-        for (i = 0; i < l; i++) {
+
+        for (i = 0; i < length; i++) {
             human = people[i];
-            if (human.id == id) {
+            if (human.id == id || human.lName == name) {
                 return human;
             }
         }
         return false;
     };
-    APP.Data.getCity = function (id) {
-        var cityArr = APP.Data.Tables.city,
-            i, l, city;
-        l = cityArr.length;
-        for (i = 0; i < l; i++) {
+
+    APP.Data.getCity = function (param) {
+        var cityArr, i, length, city, name, id;
+        cityArr = APP.Data.Tables.city;
+        length = cityArr.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
+        }
+        for (i = 0; i < length; i++) {
             city = cityArr[i];
-            if (city.id == id) {
-                return city.name;
+            if (city.id == id || city.name == name) {
+                return city;
             }
         }
         return false;
     };
-    APP.Data.setStorage = function () {
-        store.set(APPDATA, APP.Data.Tables);
+
+    APP.Data.getNewCityId = function () {
+        var cityArr, i, city, maxId, length;
+        cityArr = APP.Data.Tables.city;
+        length = cityArr.length;
+        maxId = 0;
+        for (i = 0; i < length; i++) {
+            city = cityArr[i];
+            if (maxId < city.id) {
+                maxId = city.id;
+            }
+        }
+        APP.Data.getNewCityId = function () {
+            maxId++;
+            return maxId
+        };
+        maxId++;
+        return maxId;
     };
-    APP.Data.getStorage = function () {
-        APP.Data.Tables = store.get(APPDATA);
-    };
-    APP.Data.removeHuman = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            index = data.getHumanIndexById(id);
+
+    APP.Data.removeHuman = function (param) {
+        var data, people, index;
+        data = APP.Data;
+        people = data.Tables.people;
+        index = data.getHumanIndex(param);
         people.splice(index, 1);
         data.setStorage();
     };
-    APP.Data.getHumanIndexById = function (id) {
-        var data = APP.Data,
-            people = data.Tables.people,
-            student,
-            l,
-            i;
-        l = people.length;
-        for (i = 0; i < l; i++) {
-            student = people[i];
-            if (student.id == id) {
-                return i;
-            }
-        }
-        return -1;
-    };
-    APP.Data.updateHumanById = function (id, updatedHuman) {
+
+    APP.Data.updateHuman = function (updatedHuman) {
         var attribute, data, people, index, human;
         data = APP.Data;
         people = data.Tables.people;
-        index = data.getHumanIndexById(id);
+        index = data.getHumanIndex(updatedHuman.id);
         human = people[index];
         for (attribute in updatedHuman) {
             human.attribute = updatedHuman.attribute;
         }
         data.setStorage();
     };
-    APP.Data.addStudent = function (student, id) {
-        var newStudent, data, people;
+
+    APP.Data.getHumanIndex = function (param) {
+        var data, people , human, length, i, id, name;
         data = APP.Data;
         people = data.Tables.people;
-        newStudent = student;
-        newStudent.id = id;
-        people.push(newStudent);
-        data.setStorage();
-    };//TODO - Remove id param from add functions
-    APP.Data.addLector = function (lector, id) {
-        var newLector, data, people;
+        length = people.length;
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            case "object":
+                name = param.name;
+                id = param.id;
+                break;
+            default:
+                return -1;
+        }
+        for (i = 0; i < length; i++) {
+            human = people[i];
+            if (human.id == id || human.name == name) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    APP.Data.addHuman = function (human) {
+        var newHuman, data, people;
         data = APP.Data;
         people = data.Tables.people;
-        newLector = lector;
-        newLector.id = id;
-        people.push(newLector);
+        newHuman = human;
+        newHuman.id = data.getNextHumanId();
+        people.push(newHuman);
         data.setStorage();
-    }
-    APP.Data.getLecture = function(id){
-        var data = APP.Data,
-            lectures = data.Tables.lectures,
-            lecture,
-            l,
-            i;
-        l = lectures.length;
-        for (i = 0; i < l; i++) {
+        return newHuman.id;
+    };
+
+    APP.Data.getLecture = function (param) {
+        var data, lectures, lecture, length, name, id, i;
+        data = APP.Data;
+        lectures = data.Tables.lectures;
+        length = lectures.length;
+
+        switch (typeof param) {
+            case "number":
+                id = param;
+                break;
+            case "string":
+                name = param;
+                break;
+            default:
+                return false;
+        }
+        for (i = 0; i < length; i++) {
             lecture = lectures[i];
-            if (lecture.id == id) {
+            if (lecture.id == param || lecture.name == name) {
                 return lecture;
             }
         }
         return false;
-    }
+    };
 
+    APP.Data.addCity = function (name) {
+        var data, cityId;
+        data = APP.Data;
+        cityId = data.getNewCityId();
+        data.Tables.city.push({
+            id: cityId,
+            countryId: 1,
+            name: name
+        });
+        return cityId;
+    };
 
-    APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
-    APP.Data.rawLectorsToPeopleArray(APP.Data.RawLectors);
-    APP.Data.RawLecturesToTable(APP.Data.RawLectures);
+    APP.Data.setStorage = function () {
+        store.set(APPDATA, APP.Data.Tables);
+    };
 
-    if (appData) {
-        APP.Data.getStorage();
-    } else {
-        APP.Data.setStorage();
-    }
+    APP.Data.getStorage = function () {
+        APP.Data.Tables = store.get(APPDATA);
+    };
 
+    (function () {
+        APPDATA = "AppData";
+        appData = store.get(APPDATA);
+        if (appData) {
+            APP.Data.getStorage();
+        } else {
+            APP.Data.rawStudentsToPeopleArray(APP.Data.RawStudents);
+            APP.Data.rawTeachersToPeopleArray(APP.Data.RawLectors);
+            APP.Data.rawLessonsToTable(APP.Data.RawLectures);
+            APP.Data.setStorage();
+        }
+    })(); //initialization of data
 
-})();
+}());

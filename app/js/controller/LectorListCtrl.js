@@ -8,7 +8,7 @@ function LectorListCtrl($scope) {
     };
 
     $scope.collapse = function (id) {
-        var index = APP.Data.getHumanIndexById(id),
+        var index = APP.Data.getHumanIndex(id),
         human = $scope.people[index];
         human.isCollapsed = !human.isCollapsed;
     };

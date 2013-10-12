@@ -1,4 +1,4 @@
 function LectorCtrl($scope, $routeParams) {
-    $scope.id = $routeParams.id;
+    $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);
 }
