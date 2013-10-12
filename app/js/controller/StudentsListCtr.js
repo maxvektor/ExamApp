@@ -1,7 +1,7 @@
 function StudentsListCtrl($scope) {
     $scope.people = APP.Data.Tables.people;
-    $scope.cureId = "2";
-    $scope.group = "students";
+    $scope.groupId = "2";
+    $scope.groupName = "students";
 
     $scope.remove = function (id) {
         APP.Data.removeHuman(id);
@@ -10,6 +10,6 @@ function StudentsListCtrl($scope) {
     $scope.collapse = function (id) {
         var index = APP.Data.getHumanIndexById(id),
             human = $scope.people[index];
-        human.isCollapsed = human.isCollapsed ? false : true;
+        human.isCollapsed = !human.isCollapsed;
     };
 }

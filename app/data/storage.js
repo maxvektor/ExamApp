@@ -4,6 +4,7 @@ var APP = {};
         appData = store.get(APPDATA);
 
     APP.Data = {};
+
     APP.Data.RawStudents = [
         {
             "Timestamp": "9/28/2013 2:51:14",
