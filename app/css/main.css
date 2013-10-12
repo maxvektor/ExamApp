@@ -1,4 +1,9 @@
+body{
+    background: #000945;
+}
+
 .main-wrapper {
+    min-height: 100%;
     right: 0;
     background-image: url("../img/wallpaper/wall1.jpg");
     background-size: 100%;
