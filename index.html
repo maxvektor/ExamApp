@@ -3,12 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ШРИ 2013 (Москва)</title>
-    <link rel="stylesheet" type="text/css" href="app/css/main.css">
     <link rel="stylesheet" type="text/css" href="app/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="app/css/main.css">
     <link rel="stylesheet" type="text/css" href="app/css/helper.css">
     <link rel="stylesheet" type="text/css" href="app/css/people.css">
     <link rel="stylesheet" type="text/css" href="app/css/add-etit.css">
     <link rel="stylesheet" type="text/css" href="app/css/lesson.css">
+
 </head>
 <body>
 <div class="main-wrapper">
@@ -57,6 +58,17 @@
 
 <script src="app/js/controller/LecturesListCtrl.js"></script>
 <script src="app/js/controller/LectureCtrl.js"></script>
-
-</body>
+<script type="text/javascript">
+    WebFontConfig = {
+        google: { families: [ 'Open+Sans::latin,cyrillic' ] }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })(); </script>
 </html>
