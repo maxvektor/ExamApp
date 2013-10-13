@@ -1,10 +1,34 @@
-<h1 class="human-name-header">{{ human.fName }} {{ human.lName }}</h1>
+<div>
+    <h1 class="human-header">{{ human.fName }} {{ human.lName }}</h1>
 
-<div class="human-blockquote">
-    <div class="human-photo">
-        <img src="{{ human.photos.b}}">
+    <div class="people-card-top-control">
+        <a href="#/teachers/{{ human.id }}/edit">
+                    <span class="people-card-top-control-btn people-card-top-control-edit">
+                    </span>
+        </a>
+                <span ng-click="remove( human.id )"
+                      class="people-card-top-control-btn people-card-top-control-close">
+                      </span>
     </div>
-    <p>
-        {{ human.about }}
-    </p>
+</div>
+<div class="human-photo" ng-hide="!human.photos.b">
+    <img ng-src="{{ human.photos.b}}">
+</div>
+<div class="human-blockquote-wrapper" >
+    <div class="human-blockquote" ng-hide="!human.about">
+        <p>
+            {{ human.about }}
+        </p>
+    </div>
+    <div class="human-subheader">
+        Лекции преподавателя:
+    </div>
+    <ul class="human-lectures">
+        <li ng-repeat="lecture in lectures |filter:{teacher_id: human.id}">
+            <a class="main-link" href="#/lectures/{{ lecture.id }}">- {{ lecture.name }}</a>
+        </li>
+    </ul>
+</div>
+<div class="human-blockquote-wrapper">
+
 </div>
