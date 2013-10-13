@@ -1,9 +1,6 @@
 <h1 class="human-name-header">{{ human.fName }} {{ human.lName }}</h1>
-
-<div class="human-blockquote">
-    <div class="human-photo">
-        <img ng-src="{{ human.photos.b}}" alt="{{ human.fName }} {{ human.lName }}"/>
-    </div>
+<div id="map" class="human-map" ng-init="initializeMap()" ng-hide="!city"></div>
+<div class="human-blockquote" ng-hide="!human.about">
     <p>
         {{ human.about }}
     </p>
@@ -28,3 +25,4 @@
         <img src="app/img/des/vk.png" alt="vk.com"/>
     </a>
 </div>
+
