@@ -25,10 +25,6 @@
     background: rgba(180, 180, 180, 0.5);
 }
 
-.people-card-collapsed {
-    max-height: 15px;
-}
-
 .people-card-img {
     width: 200px;
 }
@@ -94,38 +90,51 @@
     box-shadow: -30px 30px 35px 55px rgba(180, 180, 180, 1);
 }
 
-.human-name-header {
+.human-header {
     color: #facc28;
-    padding: 20px;
+    padding: 5px 5px 15px 15px;
     font-size: 45px;
+    display: inline-block;
 }
 
+.human-subheader {
+    color: #facc28;
+    padding: 15px 0;
+    font-size: 25px;
+    display: inline-block;
+}
+
+.human-map {
+    width: 100%;
+    height: 300px;
+}
+
+
+.human-photo {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.human-blockquote-wrapper{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+}
 .human-blockquote {
     background: rgba(150, 150, 150, .8);
     border-left: 10px solid #facc28;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    padding: 10px 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
+    display: block;
 }
 
 .human-blockquote:before {
     color: #facc28;
     content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-.human-blockquote:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.human-photo {
+    font-size: 70px;
+    line-height: 30px;
     margin-right: 10px;
-    float: left;
+    vertical-align: -20px;
 }
 
 .human-blockquote p {
