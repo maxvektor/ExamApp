@@ -12,7 +12,11 @@ APP.Ctrls.TeacherListCtrl = function ($scope) {
      * @param {string} id
      */
     $scope.remove = function (id) {
-        APP.Data.removeHuman(id);
+        $scope.remove = function (id) {
+            if (confirm("Удалить преподавателя?")) {
+                APP.Data.removeHuman(id);
+            }
+        };
     };
     /**
      * Sets to human new field isCollapsed or toggles isCollapsed state;
