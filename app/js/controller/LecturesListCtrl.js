@@ -11,7 +11,6 @@ APP.Ctrls.LecturesListCtrl = function ($scope) {
      * @return{string} full name of the teacher
      */
     $scope.humanName = function (id) {
-        var teacher = APP.Data.getHuman(id);
-        return teacher.fName + " " + teacher.lName;
-    };
+        return APP.Data.getHuman(id);
+    }
 };

@@ -1,5 +1,5 @@
 <h1 class="lesson-name-header">{{ lecture.name }}</h1>
-<div class="lesson-person">
+<div class="lesson-person" ng-hide="!teacher">
     <div class="lesson-person-name f-l">
         <a href="#/teachers/{{ teacher.id }}" class="lesson-link"> {{ teacher.fName }} {{ teacher.lName }}</a>
     </div>
@@ -8,7 +8,6 @@
             <img ng-src="{{ teacher.photos.m }}" alt="{{ teacher.fName }} {{ teacher.lName }}"/>
         </a>
     </div>
-
 </div>
 <div class="lesson-media-holder">
     <div class="lesson-video" ng-hide="!lecture.video_url">
