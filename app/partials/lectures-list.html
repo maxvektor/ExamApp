@@ -8,9 +8,8 @@
             </div>
         </div>
     </div>
-
-    <div class="lesson-teacher f-l">
-        <a class="lesson-link" href="#/teachers/{{ lecture.teacher_id }}"> {{ humanName(lecture.teacher_id) }}</a>
+    <div class="lesson-teacher f-l" ng-hide="!humanName(lecture.teacher_id)">
+        <a class="lesson-link" href="#/teachers/{{ lecture.teacher_id }}">{{ humanName(lecture.teacher_id).fName }} {{ humanName(lecture.teacher_id).lName }} </a>
     </div>
 
 </div>

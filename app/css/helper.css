@@ -4,6 +4,7 @@
 }
 .dn{
     display: none;
+    visibility: hidden;
 }
 .block{
     display: block;
