@@ -434,98 +434,98 @@
      */
     APP.Data.RawTeachers = [
         {
-            "id": "134",
+            "id": 124,
             "fName": "Алексей ",
             "lName": "Бережной",
             "about": "До Яндекса занимался разработкой браузерной MMORPG. С 2011 года работает над интерфейсом Яндекс.Директа.",
             "photosNumber": "01"
         },
         {
-            "id": "125",
+            "id": 125,
             "fName": "Анна",
             "lName": "Чеботкевич",
             "about": "",
             "photosNumber": "02"
         },
         {
-            "id": "126",
+            "id": 126,
             "fName": "Виктор",
             "lName": "Ашик",
             "about": "",
             "photosNumber": "03"
         },
         {
-            "id": "127",
+            "id": 127,
             "fName": "Георгий ",
             "lName": "Мостоловица",
             "about": "Веб-разработчик. В Яндексе занимается ускорением фронтенда Поиска.",
             "photosNumber": "04"
         },
         {
-            "id": "128",
+            "id": 128,
             "fName": "Денис",
             "lName": "Бугарчев",
             "about": "Верстальщик, разработчик веб-интерфейсов, автор подкаста о веб-разработке «Сделайте мне красиво!».",
             "photosNumber": "05"
         },
         {
-            "id": "129",
+            "id": 129,
             "fName": "Дмитрий ",
             "lName": "Поляков",
             "about": "",
             "photosNumber": "06"
         },
         {
-            "id": "130",
+            "id": 130,
             "fName": "Евгений ",
             "lName": "Дорошенко",
             "about": "",
             "photosNumber": "07"
         },
         {
-            "id": "131",
+            "id": 131,
             "fName": "Игорь ",
             "lName": "Новак",
             "about": "",
             "photosNumber": "08"
         },
         {
-            "id": "132",
+            "id": 132,
             "fName": "Марина ",
             "lName": "Широчкина",
             "about": "",
             "photosNumber": "09"
         },
         {
-            "id": "133",
+            "id": 133,
             "fName": "Михаил",
             "lName": "Трошев",
             "about": "",
             "photosNumber": "10"
         },
         {
-            "id": "134",
+            "id": 134,
             "fName": "Роман ",
             "lName": "Андриади",
             "about": "Работает в департаменте эксплуатации Яндекса с 2005 года. С 2010 года —руководитель группы администрирования коммуникационных, контент- и внутренних сервисов.",
             "photosNumber": "11"
         },
         {
-            "id": "135",
+            "id": 135,
             "fName": "Сергей ",
             "lName": "Сергеев",
             "about": "Профессионально занимается разработкой уже более 10 лет, из них 5 в Яндексе.",
             "photosNumber": "12"
         },
         {
-            "id": "136",
+            "id": 136,
             "fName": "Сергей ",
             "lName": "Черкасов",
             "about": "",
             "photosNumber": "13"
         },
         {
-            "id": "137",
+            "id": 137,
             "fName": "Тарас",
             "lName": "Иващенко",
             "about": "Администратор информационной безопасности в Яндексе. Специалист по информационной безопасности, проповедник свободного программного обеспечения, участник проектов w3af и OWASP.",
@@ -553,7 +553,7 @@
         },
         {
             "id": 37,
-            "teacher_id": 127,
+            "teacher_id": 124,
             "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
             "name": "http-протокол"
@@ -561,7 +561,6 @@
         {
             "id": 38,
             "teacher_id": 127,
-            "native_id": 1329,
             "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Механизм работы браузера "
@@ -582,7 +581,7 @@
         },
         {
             "id": 41,
-            "teacher_id": 134,
+            "teacher_id": 124,
             "video_url": "http://video.yandex.ru/iframe/ya-events/x79ax18q9w.3802/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26502148",
             "name": "Регулярные выражения "
@@ -709,7 +708,6 @@
 
         ]
     };
-
     /**
      * Processed raw data (Array of students) to Table
      * @name rawStudentsToPeopleArray
@@ -1043,8 +1041,6 @@
     APP.Data.getStorage = function () {
         APP.Data.Tables = store.get(APPDATA);
     };
-
-
     /**
      *initialization of data
      * if localstorage contains some object with key APPDATA, Tables will be restored from LS

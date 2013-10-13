@@ -10,9 +10,12 @@ APP.Ctrls.StudentsListCtrl = function ($scope) {
      * Removes student from APP.Data.Tables.people
      * @name remove
      * @param {string} id
-      */
-    $scope.remove = function (id) {
-        APP.Data.removeHuman(id);
+     * needs confirm
+     */
+    $scope.remove = function (id) { //TODO: custom confirm?
+        if (confirm("Удалить студента?")) {
+            APP.Data.removeHuman(id);
+        }
     };
     /**
      * Sets to human new field isCollapsed or toggles isCollapsed state;

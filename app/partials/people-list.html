@@ -3,14 +3,15 @@
 </div>
 <div class="people-container">
     <div class="people-card"
-         ng-repeat="human in people | filter:searchQuery |filter:{roleId: groupId}">
+         ng-repeat="human in people | filter:searchQuery |filter:{roleId: groupId}" ng-mouseenter="showControl = true"
+         ng-mouseleave="showControl = false">
         <div class="people-card-top">
             <div class="people-card-top-name  f-l">
                 <a class="people-card-name-link" href="#/{{ groupName }}/{{human.id}}">
                     {{human.lName}} {{ human.fName }}
                 </a>
             </div>
-            <div class="people-card-top-control">
+            <div class="people-card-top-control" ng-show="showControl">
                 <a href="#/{{ groupName }}/{{ human.id }}/edit">
                     <span class="people-card-top-control-btn people-card-top-control-edit">
                     </span>
