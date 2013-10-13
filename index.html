@@ -3,12 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ШРИ 2013 (Москва)</title>
-    <link rel="stylesheet" type="text/css" href="app/css/main.css">
     <link rel="stylesheet" type="text/css" href="app/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="app/css/main.css">
     <link rel="stylesheet" type="text/css" href="app/css/helper.css">
     <link rel="stylesheet" type="text/css" href="app/css/people.css">
     <link rel="stylesheet" type="text/css" href="app/css/add-etit.css">
     <link rel="stylesheet" type="text/css" href="app/css/lesson.css">
+
 </head>
 <body>
 <div class="main-wrapper">
@@ -18,16 +19,16 @@
         </div>
         <div class="main-menu-wrapper">
             <div class="main-menu-item">
-                <a class="{{ getClass('/home') }} main-link" href="#/home">/</a>
+                <a class="{{ getClass('/home') }} main-menu-link" href="#/home">/</a>
             </div>
             <div class="main-menu-item">
-                <a class="{{ getClass('/students') }} main-link" href="#/students">Студенты</a>
+                <a class="{{ getClass('/students') }} main-menu-link" href="#/students">Студенты</a>
             </div>
             <div class="main-menu-item">
-                <a class="{{ getClass('/teachers') }} main-link" href="#/teachers">Лекторы</a>
+                <a class="{{ getClass('/teachers') }} main-menu-link" href="#/teachers">Лекторы</a>
             </div>
             <div class="main-menu-item">
-                <a class="{{ getClass('/lectures') }} main-link" href="#/lectures">Лекции</a>
+                <a class="{{ getClass('/lectures') }} main-menu-link" href="#/lectures">Лекции</a>
             </div>
         </div>
     </div>
@@ -57,6 +58,19 @@
 
 <script src="app/js/controller/LecturesListCtrl.js"></script>
 <script src="app/js/controller/LectureCtrl.js"></script>
-
+<script type="text/javascript">
+    WebFontConfig = {
+        google: { families: [ 'Open+Sans::latin,cyrillic' ] }
+    };
+    (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
 </body>
 </html>

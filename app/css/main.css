@@ -1,4 +1,10 @@
+html{
+    background: #000945;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .main-wrapper {
+    min-height: 100%;
     right: 0;
     background-image: url("../img/wallpaper/wall1.jpg");
     background-size: 100%;
@@ -53,7 +59,12 @@
 
 .main-menu-link {
     color: black;
+    font-weight: bold;
     text-decoration: none;
+}
+.main-island{
+    margin: 5px;
+    background: rgba(100, 100, 100, .7);
 }
 
 .main-h2 {
@@ -83,8 +94,7 @@
 }
 
 .main-link {
-    color: black;
-    font-weight: bold;
+    color: #facc28;
     text-decoration: none;
 }
 
