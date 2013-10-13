@@ -553,7 +553,7 @@
         },
         {
             "id": 37,
-            "teacher_id": 127,
+            "teacher_id": 124,
             "video_url": "http://video.yandex.ru/iframe/ya-events/w2b30qpu64.4923/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": "http://www.slideshare.net/slideshow/embed_code/26497696",
             "name": "http-протокол"
@@ -561,7 +561,6 @@
         {
             "id": 38,
             "teacher_id": 127,
-            "native_id": 1329,
             "video_url": "http://video.yandex.ru/iframe/ya-events/sg6f9vxh4h.7140/?player-type=custom\u0026show-info=false\u0026show-logo=false\u0026hd=1",
             "slides_url": null,
             "name": "Механизм работы браузера "
