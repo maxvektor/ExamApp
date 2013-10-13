@@ -7,42 +7,35 @@
     width: 48%;
     margin: 1%;
 }
-
 .lesson-name {
     font-size: 25px;
     display: inline-block;
     padding: 5px;
 }
-
 .lesson-teacher {
     text-align: right;
     padding: 5px;
 }
-
 .lesson-has {
     vertical-align:top;
     display: inline-block;
 }
-
 .lesson-has-video {
     display: inline-block;
     background: url("../img/des/has-video.png");
     width: 18px;
     height: 18px;
 }
-
 .lesson-has-slide {
     display: inline-block;
     background: url("../img/des/has-slide.png");
     width: 18px;
     height: 18px;
 }
-
 .lesson-link {
     color: #facc28;
     text-decoration: none;
 }
-
 .lesson-name-header {
     color: #facc28;
     padding: 20px;
@@ -53,15 +46,12 @@
     width: 750px;
     display: inline-block;
 }
-
 .lesson-video{
     padding: 10px;
 }
-
 .lesson-slide{
     padding: 10px;
 }
-
 .lesson-person {
     width: 200px;
     display: inline-block;

@@ -3,7 +3,6 @@
     -webkit-column-width: 210px;
     column-width: 210px;
 }
-
 .people-search-wrapper {
     background: #facc28;
     height: 40px;
@@ -12,66 +11,53 @@
     width: 400px;
     margin-bottom: 5px;
 }
-
 .people-search-input {
     width: 310px;
     margin: 10px;
 }
-
 .people-card {
     display: inline-block;
     width: 200px;
     margin: 10px;
     background: rgba(180, 180, 180, 0.5);
 }
-
 .people-card-img {
     width: 200px;
 }
-
 .people-card-img-pic {
     width: 100%;
 }
-
 .people-card-top {
     padding: 3px;
     min-height: 20px;
 }
-
 .people-card-top-name {
     font-size: 17px;
     display: inline-block;
     width: 140px;
 }
-
 .people-card-name-link {
     color: #facc28;
 }
-
 .people-card-top-control {
     display: inline-block;
     vertical-align: top;
 }
-
 .people-card-top-control-btn {
     cursor: pointer;
     width: 18px;
     height: 18px;
     display: inline-block;
 }
-
 .people-card-top-control-collapse {
     background: url("../img/des/card_collapse.png") no-repeat;
 }
-
 .people-card-top-control-edit {
     background: url("../img/des/card_edit.png") no-repeat;
 }
-
 .people-card-top-control-close {
     background: url("../img/des/card_close.png") no-repeat;
 }
-
 .people-card-about {
     width: 100%;
     max-height: 125px;
@@ -79,7 +65,6 @@
     overflow: hidden;
     position: relative;
 }
-
 .people-card-about:after {
     content: "";
     position: absolute;
@@ -90,27 +75,22 @@
     border-radius: 20px;
     box-shadow: -30px 30px 35px 55px rgba(180, 180, 180, 1);
 }
-
 .human-header {
     color: #facc28;
     padding: 5px 5px 15px 15px;
     font-size: 45px;
     display: inline-block;
 }
-
 .human-subheader {
     color: #facc28;
     padding: 15px 0;
     font-size: 25px;
     display: inline-block;
 }
-
 .human-map {
     width: 100%;
     height: 300px;
 }
-
-
 .human-photo {
     margin-right: 10px;
     display: inline-block;
@@ -128,7 +108,6 @@
     quotes: "\201C" "\201D" "\2018" "\2019";
     display: block;
 }
-
 .human-blockquote:before {
     color: #facc28;
     content: open-quote;
@@ -137,11 +116,9 @@
     margin-right: 10px;
     vertical-align: -20px;
 }
-
 .human-blockquote p {
     display: inline;
 }
-
 .human-sotial {
     width: 50px;
     height: 50px;

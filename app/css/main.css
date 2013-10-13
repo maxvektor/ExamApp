@@ -2,7 +2,6 @@ html{
     background: #000945;
     font-family: 'Open Sans', sans-serif;
 }
-
 .main-wrapper {
     min-height: 100%;
     right: 0;
@@ -11,7 +10,6 @@ html{
     background-repeat: no-repeat;
     background-color: #000945;
 }
-
 .content-wrapper {
     background: rgba(100, 100, 100, .5);
     padding: 15px;
@@ -20,18 +18,15 @@ html{
     max-width: 90%;
     margin: 0 auto;
 }
-
 .main-menu {
     margin: 0 auto;
     padding: 50px 2%;
 }
-
 .main-menu:after {
     content: "";
     display: block;
     clear: both;
 }
-
 .main-menu-logo {
     height: 100px;
     width: 115px;
@@ -41,11 +36,9 @@ html{
     padding: 0 10px;
     display: inline-block;
 }
-
 .main-menu-wrapper {
     display: inline-block;
 }
-
 .main-menu-item {
     display: inline-block;
     background: #facc28;
@@ -56,7 +49,6 @@ html{
     text-align: center;
     margin-bottom: 5px;
 }
-
 .main-menu-link {
     color: black;
     font-weight: bold;
@@ -71,37 +63,29 @@ html{
     font-size: 48px;
     padding: 15px 10px;
 }
-
 .main-h3 {
     font-size: 36px;
     font-weight: 600;
     padding: 10px 10px;
 }
-
 .main-h4 {
     font-size: 24px;
     font-weight: 600;
     padding: 10px 10px;
 }
-
 .main-text {
     padding: 10px;
 }
-
 .main-video-r {
     padding: 15px;
 }
-
-
 .main-link {
     color: #facc28;
     text-decoration: none;
 }
-
 .main-link:hover {
     text-decoration: underline;
 }
-
 .active {
     color: red;
 }
