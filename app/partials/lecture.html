@@ -11,7 +11,6 @@
 
 </div>
 <div class="lesson-media-holder">
-
     <div class="lesson-video" ng-hide="!lecture.video_url">
         <iframe class="player" width="750" height="263"
                 src="{{ lecture.video_url }}"></iframe>
@@ -20,4 +19,25 @@
         <iframe class="player" width="750" height="625"
                 src="{{ lecture.slides_url }}"></iframe>
     </div>
+    <hr>
+        <div class="main-island">
+
+        </div>
+    <hr>
+    <form id="addComment" ng-submit="submit()" ng-controller="APP.Ctrls.CommentsCtrl">
+        <div class="control-form-part">
+            <h3 class="main-h3">Добавить комментарий:</h3>
+            <div class="control-group">
+                <label class="control-group-label" for="name">Имя:</label>
+                <input id="name" ng-model="name" ng-required="true">
+            </div>
+            <div class="control-group">
+                <label class="control-group-label" for="text">Комментарий:</label>
+                <textarea id="text" name="text" ng-model="text"></textarea>
+            </div>
+            <div class="control-group">
+                <button type="submit" class="comment-button">Отправить</button>
+            </div>
+        </div>
+    </form>
 </div>

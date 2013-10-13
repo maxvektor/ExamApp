@@ -706,6 +706,9 @@
         ],
         people: [
 
+        ],
+        comments: [
+
         ]
     };
     /**
@@ -936,7 +939,7 @@
      * @return {number} index in Tables.people (-1 if no math found)
      */
     APP.Data.getHumanIndex = function (param) {
-        var data, people , human, length, i, id, name;
+        var data, people , human, length, i, id, lName;
         data = APP.Data;
         people = data.Tables.people;
         length = people.length;
@@ -945,10 +948,10 @@
                 id = param;
                 break;
             case "string":
-                name = param;
+                lName = param;
                 break;
             case "object":
-                name = param.name;
+                lName = param.lName;
                 id = param.id;
                 break;
             default:
@@ -956,7 +959,7 @@
         }
         for (i = 0; i < length; i++) {
             human = people[i];
-            if (human.id == id || human.name == name) {
+            if (human.id == id || human.lName == lName) {
                 return i;
             }
         }
@@ -1040,6 +1043,52 @@
      */
     APP.Data.getStorage = function () {
         APP.Data.Tables = store.get(APPDATA);
+    };
+    /**
+     * Returns id for new Comment
+     * @name getNextCommentId
+     * @return {number} maxId - id for new Comment
+     */
+    APP.Data.getNextCommentId = function () {
+        var maxId, comments, i, length, comment;
+        maxId = 0;
+        comments = APP.Data.Tables.comments;
+        length = comments.length;
+        for (i = 0; i < length; i++) {
+            comment = comments[i];
+            if (comment.id > maxId) {
+                maxId = comment.id;
+            }
+        }
+        /**
+         * Returns id for new Human
+         * @name getNextHumanId
+         * @returns {number} maxId - id for new Human
+         * @override
+         */
+        APP.Data.getNextCommentId = function () {
+            ++maxId;
+            return maxId;
+        };
+        maxId++;
+        return maxId;
+    };
+    /**
+     * Creates new instance in array Tables.people
+     * @name addComment
+     * @param human{Object} - scaffold of comment (has no id)
+     * @return {number} id of new instance of comment
+     * local Storage will be updated
+     */
+    APP.Data.addComment = function (comment) {
+        var newComment,data, comments;
+        data = APP.Data;
+        comments = data.Tables.comments;
+        newComment = comment;
+        newComment.id = data.getNextCommentId();
+        comments.push(newComment);
+        data.setStorage();
+        return newComment.id;
     };
     /**
      *initialization of data
