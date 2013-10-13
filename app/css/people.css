@@ -92,8 +92,9 @@
 
 .human-name-header {
     color: #facc28;
-    padding: 20px;
+    padding: 5px 5px 15px 15px;
     font-size: 45px;
+    display: inline-block;
 }
 
 .human-map {
@@ -104,8 +105,8 @@
 .human-blockquote {
     background: rgba(150, 150, 150, .8);
     border-left: 10px solid #facc28;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
+    margin: 20px 0px;
+    padding: 10px 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
 

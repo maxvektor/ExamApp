@@ -2,7 +2,7 @@
  * This is controller of the single Student page
  * @name StudentCtrl
  */
-APP.Ctrls.StudentCtrl = function ($scope, $routeParams) {
+APP.Ctrls.StudentCtrl = function ($scope, $routeParams, $location) {
     $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);//TODO: check for presents of the object fields
     if (APP.Data.getCity($scope.human.city)) {
@@ -16,9 +16,20 @@ APP.Ctrls.StudentCtrl = function ($scope, $routeParams) {
         $scope.git = $scope.human.social.git;
         $scope.ya = $scope.human.social.ya;
     }
+    /**
+     * Removes student from APP.Data.Tables.people
+     * @name remove
+     * @param {string} id
+     * redirection after remove
+     */
+    $scope.remove = function (id) {
+        APP.Data.removeHuman(id);
+        $scope.newURI = "/students/";
+        $location.path($scope.newURI);
+    };
 
     /**
-     * This function initilizing map on the page if ymaps is redy
+     * This function initializing map on the page if ymaps is ready
      * @name initializeMap
      * calls on ng-init
      */
