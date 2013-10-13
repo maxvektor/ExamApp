@@ -90,10 +90,17 @@
     box-shadow: -30px 30px 35px 55px rgba(180, 180, 180, 1);
 }
 
-.human-name-header {
+.human-header {
     color: #facc28;
     padding: 5px 5px 15px 15px;
     font-size: 45px;
+    display: inline-block;
+}
+
+.human-subheader {
+    color: #facc28;
+    padding: 15px 0;
+    font-size: 25px;
     display: inline-block;
 }
 

@@ -5,7 +5,7 @@
 APP.Ctrls.TeacherCtrl = function ($scope, $routeParams, $location) {//TODO:conformation on delete
     $scope.id = parseInt($routeParams.id);
     $scope.human = APP.Data.getHuman($scope.id);
-
+    $scope.lectures = APP.Data.Tables.lectures;
     /**
      * Removes teacher from APP.Data.Tables.people
      * @name remove
