@@ -21,15 +21,8 @@
 .people-card {
     display: inline-block;
     width: 200px;
-    padding: 10px 10px;
-    margin: 5px;
+    margin: 10px;
     background: rgba(180, 180, 180, 0.5);
-    transition: all 1s;
-    -moz-transition: all 1s; /* Firefox 4 */
-    -webkit-transition: all 1s; /* Safari and Chrome */
-    -o-transition: all 1s; /* Opera */
-    max-height: 600px;
-    overflow: hidden;
 }
 
 .people-card-collapsed {
@@ -45,16 +38,13 @@
 }
 
 .people-card-top {
-    padding-bottom: 5px;
+    padding: 3px;
 }
 
 .people-card-top-name {
     font-size: 17px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 130px;
     display: inline-block;
+    width: 140px;
 }
 
 .people-card-name-link {
@@ -63,6 +53,7 @@
 
 .people-card-top-control {
     display: inline-block;
+    vertical-align: top;
 }
 
 .people-card-top-control-btn {
