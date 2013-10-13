@@ -25,10 +25,6 @@
     background: rgba(180, 180, 180, 0.5);
 }
 
-.people-card-collapsed {
-    max-height: 15px;
-}
-
 .people-card-img {
     width: 200px;
 }
