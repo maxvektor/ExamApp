@@ -12,9 +12,11 @@ APP.Ctrls.TeacherCtrl = function ($scope, $routeParams, $location) {//TODO:confo
      * @param {string} id
      * redirection after remove
      */
-    $scope.remove = function (id) {
-        APP.Data.removeHuman(id);
-        $scope.newURI = "/teachers/";
-        $location.path($scope.newURI);
+    $scope.remove = function (id) { //TODO: maybe put remove functionality to some service?
+        if (confirm("Удалить преподавателя?")) {
+            APP.Data.removeHuman(id);
+            $scope.newURI = "/teachers/";
+            $location.path($scope.newURI);
+        }
     };
 };

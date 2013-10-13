@@ -35,6 +35,7 @@
 
 .people-card-top {
     padding: 3px;
+    min-height: 20px;
 }
 
 .people-card-top-name {

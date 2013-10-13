@@ -105,3 +105,6 @@ html{
 .active {
     color: red;
 }
+.error{
+    border: red;
+}
