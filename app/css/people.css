@@ -102,32 +102,32 @@
     height: 300px;
 }
 
+
+.human-photo {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.human-blockquote-wrapper{
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+}
 .human-blockquote {
     background: rgba(150, 150, 150, .8);
     border-left: 10px solid #facc28;
-    margin: 20px 0px;
     padding: 10px 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
+    display: block;
 }
 
 .human-blockquote:before {
     color: #facc28;
     content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-.human-blockquote:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.human-photo {
+    font-size: 70px;
+    line-height: 30px;
     margin-right: 10px;
-    float: left;
+    vertical-align: -20px;
 }
 
 .human-blockquote p {
