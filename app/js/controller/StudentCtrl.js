@@ -23,13 +23,11 @@ APP.Ctrls.StudentCtrl = function ($scope, $routeParams, $location) {
      * redirection after remove
      */
     $scope.remove = function (id) {
-        $scope.remove = function (id) {
             if (confirm("Удалить студента?")) {
                 APP.Data.removeHuman(id);
                 $scope.newURI = "/students/";
                 $location.path($scope.newURI);
             }
-        };
     };
 
     /**
